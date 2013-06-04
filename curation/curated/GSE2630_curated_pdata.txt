@@ -1,0 +1,17 @@
+"sample_name"	"alt_sample_name"	"sample_type"	"primarysite"	"summarygrade"	"G"	"summarystage"	"T"	"N"	"M"	"age_at_initial_pathologic_diagnosis"	"days_to_tumor_recurrence"	"recurrence_status"	"days_to_death"	"vital_status"	"os_binary"	"relapse_binary"	"family_history"	"msi"	"location"	"summarylocation"	"gender"	"kras"	"braf"	"line1"	"tumor_size"	"mss"	"mutation_apc"	"lymphnodesremoved"	"lymphnodesinvaded"	"stageall"	"ethnicity"	"dfs_status"	"days_to_recurrence_or_death"	"batch_1"	"batch_2"	"batch_3"
+"GSM50473"	"c16 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"42"	NA	"recurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50474"	"c18 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"66"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50475"	"c25 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"72"	NA	"recurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50496"	"c37 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"45"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	"l"	"f"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50504"	"c52 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"78"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	"r"	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50505"	"c70 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"69"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	"r"	"f"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50506"	"c73 colonII"	NA	NA	NA	NA	NA	"2"	"0"	"0"	"67"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50507"	"c75 colonII"	NA	NA	NA	NA	NA	"2"	"0"	"0"	"67"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50508"	"c77 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"66"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"f"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50509"	"c78 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"81"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50510"	"c79 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"72"	NA	"recurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50511"	"c80 colonII"	NA	NA	NA	NA	NA	"2"	"0"	"0"	"67"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	"r"	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50512"	"c94 colonII"	NA	NA	NA	NA	NA	"2"	"0"	"0"	"48"	NA	"norecurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"f"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50513"	"c95 colonII"	NA	NA	NA	NA	NA	"2"	"0"	"0"	"72"	NA	"recurrence"	NA	NA	NA	NA	NA	NA	NA	NA	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50514"	"c96 colonII"	NA	NA	NA	NA	NA	"2"	"0"	"0"	"60"	NA	"recurrence"	NA	NA	NA	NA	NA	NA	NA	"r"	"m"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+"GSM50515"	"c97 colonII"	NA	NA	NA	NA	NA	"3"	"0"	"0"	"58"	NA	"recurrence"	NA	NA	NA	NA	NA	NA	NA	"l"	"f"	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA

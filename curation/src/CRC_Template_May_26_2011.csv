@@ -1,0 +1,38 @@
+col.name,var.class,uniqueness,requiredness,allowedvalues,description
+sample_name,character,uniqueness,required,*,primary sample identifier
+alt_sample_name,character,uniqueness,optional,*,"if another identifier is used, for example in supplemental tables"
+sample_type,character,non-unique,optional,tumor|metastatic|healthy|adjacentnormal,"""healthy"" should be only from individuals without cancer, ""metastatic"" for non-primary tumors"
+primarysite,character,non-unique,optional,co|re,co = colon; re= rectum
+summarygrade,character,non-unique,optional,low|high,"low = 1,2; high = 3,4"
+G,character,non-unique,optional,1|2|3|4,"G(1-4): If multiple given, ie 12, 23, use highest given"
+summarystage,character,non-unique,optional,early|late,"early = 1,2; late = 3,4"
+T,character,non-unique,optional,0|1|2|3|4,"T(1-4): If multiple given, ie 12, 23, use highest given"
+N,character,non-unique,optional,[0-3],N (0/1): degree of spread to regional lymph nodes
+M,character,non-unique,optional,[01],M (0/1): presence of metastasis
+age_at_initial_pathologic_diagnosis,integer,non-unique,optional,[1-9][0-9],in years
+days_to_tumor_recurrence,integer,non-unique,optional,decimal,time to recurrence or last follow-up in days
+recurrence_status,character,non-unique,optional,recurrence|norecurrence,recurrence censoring variable
+days_to_death,integer,non-unique,optional,decimal,time to death or last follow-up in days
+vital_status,character,non-unique,optional,living|deceased,Overall survival censoring variable
+os_binary,character,non-unique,optional,short|long,"dichotomized overall survival variable (short, long)"
+relapse_binary,character,non-unique,optional,short|long,"dichotomized relapse variable (short, long)"
+family_history,character,non-unique,optional,[yn],family history of colorectal cancer
+msi,character,non-unique,optional,[yn],microsatellite phenotype: (microsatellite instability) 
+location,character,non-unique,optional,ascending|transverse|descending|rectum|caecum|sigmoid|rectosigmoid|hepaticflexure|flexureright|co|proximal|distal,detailed location
+summarylocation,character,non-unique,optional,[lr],left or right
+gender,character,non-unique,optional,[mf],male or female
+kras,character,non-unique,optional,[yn],genome/variation: (wild type KRAS)
+braf,character,non-unique,optional,[yn],braf mutation
+line1,character,non-unique,optional,[yn],line-1 hypomethylation
+tumor_size,integer,non-unique,optional,[1-10],centimeters
+mss,character,non-unique,optional,[yn],microsatellite phenotype: (microsatellite stability) 
+mutation_apc,character,non-unique,optional,[yn],any APC mutation
+lymphnodesremoved,integer,non-unique,optional,[1-9][0-9],"why is this an integer 10-99, and what does it mean?"
+lymphnodesinvaded,integer,non-unique,optional,[1-9][0-9],"why is this an integer 10-99, and what does it mean?"
+stageall,character,non-unique,optional,1|2|3|4,ajcc or uicc
+ethnicity,character,non-unique,optional,caucasian|black|hispanic|other,ethnic background
+dfs_status,character,non-unique,optional,living_norecurrence|deceased_or_recurrence,disease free survival censoring variable
+days_to_recurrence_or_death,integer,non-unique,optional,decimal,time to recurrence or death
+batch_1,character,non-unique,optional,*,batch variable
+batch_2,character,non-unique,optional,*,second batch variable
+batch_3,character,non-unique,optional,*,third batch variable

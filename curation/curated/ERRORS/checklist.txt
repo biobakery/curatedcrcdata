@@ -1,0 +1,26 @@
+"column.names" "variable.regex.checks"
+"GSE11237_curated_pdata.txt" TRUE TRUE
+"GSE12225_curated_pdata.txt" TRUE TRUE
+"GSE12520-GPL7199_curated_pdata.txt" TRUE TRUE
+"GSE12520-GPL9336_curated_pdata.txt" TRUE TRUE
+"GSE12945_curated_pdata.txt" TRUE FALSE
+"GSE13067_curated_pdata.txt" TRUE TRUE
+"GSE14333_curated_pdata.txt" TRUE TRUE
+"GSE16125-GPL5175_curated_pdata.txt" TRUE TRUE
+"GSE17536_curated_pdata.txt" TRUE TRUE
+"GSE17537_curated_pdata.txt" TRUE TRUE
+"GSE18105_curated_pdata.txt" TRUE TRUE
+"GSE20842_curated_pdata.txt" TRUE TRUE
+"GSE2109_curated_pdata.txt" TRUE TRUE
+"GSE21510_curated_pdata.txt" TRUE TRUE
+"GSE24549-GPL11028_curated_pdata.txt" TRUE TRUE
+"GSE24549-GPL5175_curated_pdata.txt" TRUE TRUE
+"GSE24550-GPL11028_curated_pdata.txt" TRUE TRUE
+"GSE24550-GPL5175_curated_pdata.txt" TRUE TRUE
+"GSE2630_curated_pdata.txt" TRUE TRUE
+"GSE26906_curated_pdata.txt" TRUE TRUE
+"GSE27544_curated_pdata.txt" TRUE TRUE
+"GSE3964_curated_pdata.txt" TRUE TRUE
+"GSE4045_curated_pdata.txt" TRUE TRUE
+"GSE4526_curated_pdata.txt" TRUE TRUE
+"GSEGSE12225_curated_pdata.txt" TRUE TRUE
