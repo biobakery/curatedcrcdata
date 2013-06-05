@@ -1,6 +1,7 @@
 REXEC=`which R`
-OVHOME=`pwd | sed -e 's|/shellscripts||'`
-SRCHOME=$OVHOME/src
+HOME=`pwd | sed -e 's|/curatedcrcdata/shellscripts||'`
+OVHOME=$OVSRC/curatedcrcdata
+SRCHOME=$HOME/curatedovariandata/src
 DATAHOME=$OVHOME/DATA
 CURATIONHOME=$OVHOME/curation
 CURATIONSRC=$CURATIONHOME/src
