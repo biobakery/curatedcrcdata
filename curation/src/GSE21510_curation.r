@@ -1,5 +1,5 @@
 rm(list=ls())
-source("../../functions.R")
+source("functions.R")
 
 uncurated <- read.csv("../uncurated/GSE21510_full_pdata.csv",as.is=TRUE,row.names=1)
 
@@ -15,8 +15,6 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_
 curated$alt_sample_name <- uncurated$title
 
 ##sample_type
-##is there a better way of doing this?
-##ex., search for "cancer", if find, then write "tumor", else, write "adjacentnormal"
 tmp <- uncurated$characteristics_ch1.2
 tmp[tmp=="tissue: cancer, LCM"] <-"tumor"
 tmp[tmp=="tissue: normal, homogenized"] <-"adjacentnormal"
@@ -31,7 +29,7 @@ tmp <- gsub("[^\\d]","",tmp,perl=TRUE)
 curated$T <- tmp 
 
 
-##stageall 
+##summarystage
 tmp<-uncurated$characteristics_ch1.1
 tmp <- gsub("[^\\d]","",tmp,perl=TRUE)
 tmp[tmp=="0"] <-NA
@@ -49,5 +47,5 @@ tmp[tmp=="metastasis: metastasis"] <-"1"
 curated$M <- tmp
 
 
-#tmp2 <- edit(curated) 
+curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE21510_curated_pdata.txt",sep="\t")

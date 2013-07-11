@@ -1,24 +1,14 @@
 rm(list=ls())
 
-source("../../functions.R")
+source("functions.R")
 
 uncurated <- read.csv("../uncurated/GSE12520-GPL7199_full_pdata.csv",as.is=TRUE,row.names=1)
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_May_26_2011.csv")
 
-##QTS for LW:
-##1) GENDER: The same patient says both genders...in dif. columns
-##3) for location:
-##not sure what caecum, sigmoid, rectosigmoid, hepatic flexure correspond to on our template.
-##from wiki: would have thought caecum is ascending, but there is a distinct ascending value in the excel file already.
-##no idea what sigmoid corresponds to.  hepatic flexure is "in b/t transverse and ascending."  So it is?
-##4) how can we deduce summarylocation from this?
-##5) for msi, it says: MSI-H or MSI-L.  Do we want these H or L's?
-##6) for vital_status: how to interpret "sensored"?!?
-
-##alt_sample_name
-##gender-- ASK LW: characteristics_ch1 says one gender, then, on same row, characteristics_ch2 says the opposite...which one is it?
+#alt sample_name
+##gender
 ##age
 ##location
 ##summarylocation??
@@ -50,8 +40,6 @@ curated$gender <- tmp
 curated$sample_type <- "tumor"
 
 ##location
-##accepted values on template: ascending, transverse, descending, rectum
-##q's: Rectosigmoid?  hepatic flexure?
 tmp <- uncurated$characteristics_ch1.2
 tmp <- sub("location: ","",tmp,fixed=TRUE)
 tmp[tmp=="Ascending Colon"] <- "ascending"
@@ -65,9 +53,6 @@ tmp[tmp=="Transverse"] <- "transverse"
 tmp[tmp=="Rectosigmoid"] <- "rectosigmoid"
 tmp[tmp=="Hepatic flexure"] <- "hepaticflexure"
 curated$location <- tmp
-
-##summarylocation
-##accepted values: [lr]
 
 ##msi
 tmp <-uncurated$characteristics_ch1.3
@@ -114,10 +99,12 @@ tmp <- uncurated$characteristics_ch1.7
 tmp[tmp=="alive/dead at the end of recorded survival: Alive"] <- "living"
 tmp[tmp=="alive/dead at the end of recorded survival: Dead"] <- "deceased"
 tmp[tmp=="alive/dead at the end of recorded survival: n/a"] <- NA
-#add to readme that "sensored" means "living"-- unless something contradicts this in the paper...
 tmp[tmp=="alive/dead at the end of recorded survival: Sensored"] <- "living"
 curated$vital_status <- tmp
 
-#tmp2 <- edit(curated)
+#Questions:
+#* Sensored means living?
+#*survival gives values in the form of months. Is this the same as days to death? Currently have used it as days to death.
+curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE12520-GPL7199_curated_pdata.txt",sep="\t")
 

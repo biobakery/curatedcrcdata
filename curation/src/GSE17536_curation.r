@@ -1,17 +1,11 @@
 rm(list=ls())
 
-source("../../functions.R")
+source("functions.R")
 
 uncurated <- read.csv("../uncurated/GSE17536_full_pdata.csv",as.is=TRUE,row.names=1)
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_May_26_2011.csv")
-
-##Questions for Levi
-##1) How can I use "overall_event" and "dss_event" to maximize our information?
-##2) Is "dss_time" becomes "days_to_death"*30 accurate?
-##3) should I use ajcc for stageall?  Re: previous script where they had dif. UICC and T values for the same patient...
-##4) What about "dfs_time" can we use it at all?
 
 ##alt_sample_name
 ##age
@@ -64,8 +58,6 @@ tmp[tmp=="3"] <- "high"
 tmp[tmp=="4"] <- "high"
 curated$summarygrade <- tmp
 
-curated$sample_type <- "tumor"
-
 ##vital_status
 tmp <- uncurated$characteristics_ch1.5
 tmp <- sub("overall_event (death from any cause): ","",tmp,fixed=TRUE)
@@ -86,7 +78,11 @@ tmp <- as.numeric(tmp)
 tmp <- tmp * 30  #months to days
 curated$days_to_death <- tmp
 
-#tmp2 <- edit(curated)
+
+curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE17536_curated_pdata.txt",sep="\t")
 
 
+##Questions:
+##Overall survival == days_to_death?
+##is there is diff between overall survival, dfs_time, dss_time?

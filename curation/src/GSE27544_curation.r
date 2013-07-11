@@ -1,6 +1,6 @@
 rm(list=ls())
 
-source("../../functions.R")
+source("functions.R")
 
 uncurated <- read.csv("../uncurated/GSE27544_full_pdata.csv",as.is=TRUE,row.names=1)
 
@@ -32,5 +32,5 @@ tmp[tmp=="MSS/HLA-"] <- "y"
 tmp[tmp=="MSS/HLA+"] <- "y"
 curated$mss <- tmp
 
-#tmp2 <- edit(curated)
+curated<-postProcess(curated,uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE27544_curated_pdata.txt",sep="\t")

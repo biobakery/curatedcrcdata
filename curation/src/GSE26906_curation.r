@@ -1,16 +1,11 @@
 rm(list=ls())
 
-source("../../functions.R")
+source("functions.R")
 
 uncurated <- read.csv("../uncurated/GSE26906_full_pdata.csv",as.is=TRUE,row.names=1)
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_May_26_2011.csv")
-
-##Questions for Levi:
-##1) our template gives us [01] for metastasis.  They have 0 or the actual location where it metastasized to-- do we want this location?
-##2) for apc_mutation we have [yn]-- they have two of them (first and second) and values associated with them.  do we want these values?
-##3) did I do the mutation_apc column correctly?
 
 ##alt_sample_name
 ##T
@@ -70,7 +65,5 @@ tmp[tmp=="first apc mutation: 0"] <- "0"
 tmp <- ifelse(tmp =="0","n","y")
 curated$mutation_apc <- tmp
 
-
-#tmp2 <- edit(curated)
+curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE26906_curated_pdata.txt",sep="\t")
-

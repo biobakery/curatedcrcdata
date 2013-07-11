@@ -1,10 +1,5 @@
 rm(list=ls())
-source("../../functions.R")
-getVal <- function(x,string){
-  output <- x[grep(string,x,fixed=TRUE)]
-  if(length(output)==0) output <- NA
-  return(output)
-}
+source("functions.R")
 
 ##uncurated <- read.csv("../uncurated/pythonscript1_output_GSE_14333.csv",as.is=TRUE,row.names=1)
 uncurated.raw <- read.csv("../uncurated/GSE4045_full_pdata.csv",as.is=TRUE,row.names=1)
@@ -15,14 +10,6 @@ uncurated <- strsplit(uncurated.raw$description,split=",")
 uncurated <- do.call(rbind,uncurated)
 rownames(uncurated) <- rownames(uncurated.raw)
 colnames(uncurated) <- 1:ncol(uncurated)
-
-for (i in 1:ncol(uncurated)){
-  before.colvals <- uncurated[,i]
-  intermediate.colvals <- strsplit(before.colvals,split=":")
-  after.colvals <- do.call(rbind,intermediate.colvals)
-  colnames(uncurated)[i] <- unique(after.colvals[,1])
-  uncurated[,i] <- sub(" ","",after.colvals[,2],fixed=TRUE)
-}
 
 uncurated <- data.frame(uncurated,stringsAsFactors=FALSE)
 
@@ -37,6 +24,7 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_
 ##gender
 ##stageall
 ##MSS
+#MSI
 ##location
 ##family_history
 ##summarygrade
@@ -63,7 +51,16 @@ tmp <- sub(" Dukes Stage d","4",tmp,fixed=TRUE)
 curated$stageall <- tmp 
 
 ##MSS
-curated$mss <- "y"
+tmp<-uncurated$X4
+tmp[tmp==" MSS"]<-"y"
+tmp[tmp==" MSI"]<-"n"
+curated$mss<-tmp
+
+#MSI
+tmp<-uncurated$X4
+tmp[tmp==" MSS"]<-"n"
+tmp[tmp==" MSI"]<-"y"
+curated$msi<-tmp
 
 ##family_history
 tmp <- uncurated$X5
@@ -78,12 +75,6 @@ tmp <- uncurated$X7
 tmp <- sub(" Proximal Location ","proximal",tmp,fixed=TRUE)
 tmp <- sub(" Distal Location ","distal",tmp,fixed=TRUE)
 curated$location <- tmp
-
-##summarylocation
-tmp <- uncurated$X7
-tmp <- sub(" Proximal Location ","l",tmp,fixed=TRUE)
-tmp <- sub(" Distal Location ","r",tmp,fixed=TRUE)
-curated$summarylocation <- tmp
 
 ##summarygrade
 tmp <- uncurated$X8
@@ -103,6 +94,6 @@ tmp <- sub("Tumor Grade 3","3",tmp,fixed=TRUE)
 tmp <- sub("conventional colorectal tumor",NA,tmp,fixed=TRUE)
 curated$G <- tmp
 
-
-#tmp2 <- edit(curated) 
+curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE4045_curated_pdata.txt",sep="\t")
+

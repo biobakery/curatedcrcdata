@@ -1,20 +1,11 @@
 rm(list=ls())
 
-source("../../functions.R")
+source("functions.R")
 
 uncurated <- read.csv("../uncurated/GSE20842_full_pdata.csv",as.is=TRUE,row.names=1)
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_May_26_2011.csv")
-
-##Questions for Levi:
-##NOTE: wildtype -> "n"; mutated -> "y"
-##2) It also has a column saying tumor, do we want to include this for CRC?  
-
-##alt_sample_name
-##age
-##gender
-##KRAS
 
 #alt_sample_name
 tmp <- uncurated$characteristics_ch1
@@ -48,6 +39,7 @@ tmp[tmp=="wild type KRAS"] <- "n"
 tmp[tmp=="mutated KRAS"] <- "y"
 curated$kras <- tmp
 
-#tmp2 <- edit(curated)
+curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE20842_curated_pdata.txt",sep="\t")
 
+##is sample type done correctly in this and the previous one?

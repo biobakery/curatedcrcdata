@@ -36,3 +36,7 @@ days_to_recurrence_or_death,integer,non-unique,optional,decimal,time to recurren
 batch_1,character,non-unique,optional,*,batch variable
 batch_2,character,non-unique,optional,*,second batch variable
 batch_3,character,non-unique,optional,*,third batch variable
+drug_name,character,non-unique,optional,*,Name of the drug samples are treated with
+drug_treatment,character,non-unique,optional,[yn],drug treated: y; non-treated: n
+drug_response,character,non-unique,optional,[yn],drug responder: y and non-responder:n
+uncurated_author_metadata,character,non-unique,optional,*,"original uncurated data, with each field separated by ///."

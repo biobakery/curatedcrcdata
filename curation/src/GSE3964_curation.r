@@ -1,17 +1,14 @@
 rm(list=ls())
-source("../../functions.R")
+source("functions.R")
 
-uncurated <- read.csv("../uncurated/GSE3964_full_pdata.csv",as.is=TRUE,row.names=1)
-
+uncurated.raw <- read.csv("../uncurated/GSE3964_full_pdata.csv",as.is=TRUE,row.names=1)
+uncurated<-uncurated.raw[15:29,]
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_May_26_2011.csv")
 
 ##--------------------
 ##start the mappings
 ##--------------------
-
-##Not sure how to handle liver metasistic, 1st and 2nd biopsy.
-##Add chemo resistance or sensitive values to experiment template so we can access it if need be
 
 ##title -> alt_sample_name
 curated$alt_sample_name <- uncurated$title
@@ -34,5 +31,11 @@ tmp[tmp=="Tumor stage: stade IV (UICC);"] <-"4"
 tmp[tmp==""] <- NA
 curated$stageall<- tmp
 
-#tmp2 <- edit(curated) 
+##sample_type
+tmp<-apply(uncurated,1,getVal,string="Tissue: ")
+tmp[grep("tumor colon",tmp)]<-"tumor"
+tmp[tmp!="tumor"]<-"adjacentnormal"
+curated$sample_type<-tmp
+
+curated<-postProcess(curated,uncurated) 
 write.table(curated, row.names=FALSE, file="../curated/GSE3964_curated_pdata.txt",sep="\t")

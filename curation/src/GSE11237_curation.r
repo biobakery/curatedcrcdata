@@ -1,5 +1,5 @@
 rm(list=ls())
-source("../../functions.R")
+source("functions.R")
 
 uncurated <- read.csv("../uncurated/GSE11237_full_pdata.csv",as.is=TRUE,row.names=1)
 
@@ -14,15 +14,13 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="CRC_Template_
 ##title -> alt_sample_name
 curated$alt_sample_name <- uncurated$title
 
+curated$sample_type<-"tumor"
+
 ##gender
 tmp <- uncurated$characteristics_ch1
 tmp[tmp=="Gender: Female"] <-"f"
 tmp[tmp=="Gender: Male"] <-"m"
 curated$gender <- tmp
-
-curated$sample_type <- "tumor"
-
-curated$subtype <- "other"
 
 ##stageall
 tmp <- uncurated$characteristics_ch1.1
@@ -83,5 +81,16 @@ tmp[tmp=="Tumor Site: Ascending"] <- "ascending"
 tmp[tmp=="Tumor Site: Descending"] <- "descending"
 curated$location <- tmp
 
-#tmp2 <- edit(curated) 
+#drug treatment
+tmp<-uncurated$characteristics_ch1.7
+tmp[tmp=="Drug Treatment: YES"]<-"y"
+tmp[tmp=="Drug Treatment: NO"]<-"n"
+curated$drug_treatment<-tmp
+
+#drug_name
+tmp[tmp=="y"]<-"celecoxib"
+tmp[tmp=="n"]<-NA
+curated$drug_name<-tmp
+
+curated <- postProcess(curated, uncurated) 
 write.table(curated, row.names=FALSE, file="../curated/GSE11237_curated_pdata.txt",sep="\t")
