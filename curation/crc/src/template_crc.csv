@@ -1,5 +1,6 @@
 col.name,var.class,uniqueness,requiredness,allowedvalues,description
 sample_name,character,uniqueness,required,*,primary sample identifier
+unique_patient_ID,character,uniqueness,optional,*,Use this column if there are technical replicates. If this column contains non-unique entries  expression values of those arrays will eventually be averaged
 alt_sample_name,character,uniqueness,optional,*,"if another identifier is used, for example in supplemental tables"
 sample_type,character,non-unique,optional,tumor|metastatic|healthy|adjacentnormal,"""healthy"" should be only from individuals without cancer, ""metastatic"" for non-primary tumors"
 primarysite,character,non-unique,optional,co|re,co = colon; re= rectum
@@ -36,7 +37,7 @@ days_to_recurrence_or_death,integer,non-unique,optional,decimal,time to recurren
 batch_1,character,non-unique,optional,*,batch variable
 batch_2,character,non-unique,optional,*,second batch variable
 batch_3,character,non-unique,optional,*,third batch variable
-drug_name,character,non-unique,optional,*,Name of the drug samples are treated with
-drug_treatment,character,non-unique,optional,[yn],drug treated: y; non-treated: n
-drug_response,character,non-unique,optional,[yn],drug responder: y and non-responder:n
-uncurated_author_metadata,character,non-unique,optional,*,"original uncurated data, with each field separated by ///."
+drug_name,character,non-unique,optional,*,name of the drug the samples are treated with
+drug_treatment,character,non-unique,optional,[yn],drug treated: y ; non-treated: n
+drug_response,character,non-unique,optional,[yn],responder: y ; non-responder: n
+uncurated_author_metadata,character,non-unique,optional,*,original uncurated data
