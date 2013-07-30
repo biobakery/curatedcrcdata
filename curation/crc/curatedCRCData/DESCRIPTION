@@ -1,0 +1,14 @@
+Package: curatedCRCData
+Type: Package
+Title: Colorectal Cancer Gene Expression Analysis
+Version: 0.1.1
+Date: 2012-05-07
+Author: Benjamin F. Ganzfried, Dr. Levi Waldron, Dr. Markus Riester, Dr. Victoria Wang, Dr. Curtis Huttenhower, Dr. Svitlana Tyekucheva, Dr. Jie Ding, Dr. Michael Birrer, Dr. Giovanni Parmigiani
+Maintainer: Benjamin F. Ganzfried <ben.ganzfried@gmail.com>
+Description: The curatedCRC package provides relevant functions and data for gene expression analysis in patients with colorectal cancer.
+Depends: R (>= 1.8.0), nlme
+Suggests: survival
+License: Artistic-2.0
+URL: http://bcb.dfci.harvard.edu/~gp
+Packaged: 2012-05-08 00:53:56 UTC; benganz
+Namespace: auto
