@@ -22,10 +22,10 @@ colnames(batch.info) <- c("batch","Array.Data.File")
 batch.info <- batch.info[match(celfiles.map$Array.Data.File,batch.info$Array.Data.File),]
 
 if(identical(all.equal(celfiles.map$Array.Data.File,batch.info$Array.Data.File),TRUE))
-  {
-    print("Adding batch info to celfiles.map")
-    celfiles.map$batch <- batch.info$batch
-  }
+{
+  print("Adding batch info to celfiles.map")
+  celfiles.map$batch <- batch.info$batch
+}
 
 summary(clinical.slide$bcr_aliquot_uuid %in% celfiles.map$alt_sample_name)  
 summary(celfiles.map$alt_sample_name %in% clinical.slide$bcr_aliquot_uuid)  
@@ -37,20 +37,6 @@ Extract.Name<-keep.ids
 keep.ids<-substr(keep.ids,1,12)
 uncurated <- uncurated[match(keep.ids,rownames(uncurated)),]
 uncurated$Extract.Name<-Extract.Name
-##create a new uncurated dataframe which contains duplicate rows for the technical replicates
-# uncurated.withreps <- matrix(NA,nrow=nrow(celfiles.map),ncol=ncol(uncurated))
-# rownames(uncurated.withreps) <- sub(".txt","",celfiles.map$Array.Data.File,fixed=TRUE)
-# colnames(uncurated.withreps) <- colnames(uncurated)
-# uncurated.withreps <- data.frame(uncurated.withreps)
-# uncurated.withreps$unique_patient_ID <- celfiles.map$alt_sample_name
-# uncurated.withreps$batch <- celfiles.map$batch
-# uncurated.withreps$Extract.Name <- celfiles.map$Extract.Name
-# for (i in 1:nrow(uncurated.withreps))
-#   {
-#     uncurated.withreps[i,1:ncol(uncurated)] <- uncurated[match(uncurated.withreps$unique_patient_ID[i],rownames(uncurated)),]
-#   }
-# uncurated <- uncurated.withreps;rm(uncurated.withreps)
-# 
 
 ##Keep primary tumors and normal tissues only.
 tumor.num <- strsplit(uncurated$Extract.Name,split="-")
@@ -62,18 +48,19 @@ keep.samples <- tumor.num=="01" | tumor.num=="11"  ##keep 01 - "Recurrent Solid 
 uncurated <- uncurated[keep.samples,]
 tumor.num <- tumor.num[keep.samples]
 
+uncurated$unique_patient_id <- rownames(uncurated)
+rownames(uncurated) <- make.names(uncurated$Extract.Name)
+
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
-curated$unique_patient_ID <- uncurated$unique_patient_ID
 curated$batch <- uncurated$batch
 curated$alt_sample_name <- uncurated$Extract.Name  ##Put Extract.Name for alt_sample_name
-
+curated$batch <- uncurated$batch
+curated$unique_patient_ID <- uncurated$unique_patient_id
 
 ##--------------------
 ##start the curation
 ##--------------------
 source("TCGA/TCGA_curation_all_platforms.r")
-
-curated$batch <- uncurated$batch
 
 write.table(curated, row.names=FALSE, file="../curated/TCGA_curated_pdata.txt",sep="\t")
