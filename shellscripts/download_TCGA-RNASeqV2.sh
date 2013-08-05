@@ -17,8 +17,8 @@ mkdir $defaultDir
 
 cd $celDir/RAW
 
-wget --timestamping --no-check-certificate $URL/unc.edu_COAD.IlluminaHiSeq_RNASeqV2.Level_3.1.3.0.tar.gz 
-wget --timestamping --no-check-certificate $URL/unc.edu_COAD.IlluminaHiSeq_RNASeqV2.mage-tab.1.3.0.tar.gz  
+#wget --timestamping --no-check-certificate $URL/unc.edu_COAD.IlluminaHiSeq_RNASeqV2.Level_3.1.4.0.tar.gz 
+wget --timestamping --no-check-certificate $URL/unc.edu_COAD.IlluminaHiSeq_RNASeqV2.mage-tab.1.4.0.tar.gz  
 
 
 for file in `ls *.tar.gz`;do tar xfz $file;done
@@ -32,7 +32,7 @@ RCODE="
     files = dir(full.names=TRUE);
     files = files[grep(\".rsem.genes.normalized_results\", files)];
     data <- lapply(files, read.delim, stringsAsFactors=FALSE, as.is=TRUE);
-    sdrf <- read.delim(\"unc.edu_OV.IlluminaHiSeq_RNASeqV2.1.1.0.sdrf.txt\",
+    sdrf <- read.delim(\"unc.edu_COAD.IlluminaHiSeq_RNASeqV2.1.3.0.sdrf.txt\",
         as.is=TRUE);
     barcodes <- sdrf[match(gsub(\"\\\\..*$\",\"\",gsub(\".*unc.edu.\",\"\",files)),
      sdrf[,1]), 2];
@@ -53,6 +53,6 @@ TMPFILE=`mktemp -t cod-rnaseqv2.XXXXXXXXXX`
 echo $RCODE > "$TMPFILE"
 R --vanilla < "$TMPFILE"
 mv TCGA-RNASeqV2_default_exprs.csv $defaultDir
-mkdir $OVHOME/GENEMAPS
-mv TCGA-RNASeqV2.csv $OVHOME/GENEMAPS
-mv unc.edu_OV.IlluminaHiSeq_RNASeqV2.1.1.0.sdrf.txt $UNCURATED
+mkdir $REPOSHOME/GENEMAPS
+mv TCGA-RNASeqV2.csv $REPOSHOME/GENEMAPS
+mv unc.edu_COAD.IlluminaHiSeq_RNASeqV2.1.3.0.sdrf.txt $UNCURATED
