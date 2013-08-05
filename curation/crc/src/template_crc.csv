@@ -19,7 +19,7 @@ os_binary,character,non-unique,optional,short|long,"dichotomized overall surviva
 relapse_binary,character,non-unique,optional,short|long,"dichotomized relapse variable (short, long)"
 family_history,character,non-unique,optional,[yn],family history of colorectal cancer
 msi,character,non-unique,optional,[yn],microsatellite phenotype: (microsatellite instability) 
-location,character,non-unique,optional,ascending|transverse|descending|rectum|caecum|sigmoid|rectosigmoid|hepaticflexure|flexureright|co|proximal|distal,detailed location
+location,character,non-unique,optional,ascending|transverse|descending|rectum|caecum|sigmoid|rectosigmoid|hepaticflexure|flexureright|co|proximal|distal|Rectosigmoid Junction,detailed location
 summarylocation,character,non-unique,optional,[lr],left or right
 gender,character,non-unique,optional,[mf],male or female
 kras,character,non-unique,optional,[yn],genome/variation: (wild type KRAS)
