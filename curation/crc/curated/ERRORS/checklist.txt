@@ -32,3 +32,4 @@
 "GSE4526_curated_pdata.txt" TRUE TRUE
 "GSE45270_curated_pdata.txt" TRUE TRUE
 "TCGA_curated_pdata.txt" TRUE TRUE
+"TCGA-RNASeqV2_curated_pdata.txt" TRUE TRUE
