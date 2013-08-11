@@ -17,7 +17,7 @@ mkdir $defaultDir
 
 cd $celDir/RAW
 
-#wget --timestamping --no-check-certificate $URL/unc.edu_COAD.IlluminaHiSeq_RNASeqV2.Level_3.1.4.0.tar.gz 
+wget --timestamping --no-check-certificate $URL/unc.edu_COAD.IlluminaHiSeq_RNASeqV2.Level_3.1.4.0.tar.gz 
 wget --timestamping --no-check-certificate $URL/unc.edu_COAD.IlluminaHiSeq_RNASeqV2.mage-tab.1.4.0.tar.gz  
 
 
@@ -31,7 +31,7 @@ RCODE="
     library(reshape2);
     files = dir(full.names=TRUE);
     files = files[grep(\".rsem.genes.normalized_results\", files)];
-    data <- lapply(files, read.delim, stringsAsFactors=FALSE, as.is=TRUE);
+     data <- lapply(files, read.delim, stringsAsFactors=FALSE, as.is=TRUE);
     sdrf <- read.delim(\"unc.edu_COAD.IlluminaHiSeq_RNASeqV2.1.3.0.sdrf.txt\",
         as.is=TRUE);
     barcodes <- sdrf[match(gsub(\"\\\\..*$\",\"\",gsub(\".*unc.edu.\",\"\",files)),

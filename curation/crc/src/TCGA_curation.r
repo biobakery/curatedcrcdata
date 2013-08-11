@@ -6,37 +6,14 @@ celfile.dir <- "../../../DATA/TCGA/RAW"
 
 ##map between cel files and patient barcodes
 celfiles.map <- read.delim("../uncurated/unc.edu_COAD.AgilentG4502A_07_3.sdrf.txt",as.is=TRUE)
-celfiles.map <- celfiles.map[,match(c("Extract.Name","Array.Data.File"),colnames(celfiles.map))]
-celfiles.map$alt_sample_name <- celfiles.map[,1]
 celfiles.map<-celfiles.map[which(celfiles.map[,"Extract.Name"]!="Stratagene Univeral Reference"),]
+celfiles.map <- celfiles.map[,match(c("Comment..TCGA.Barcode.","Derived.Array.Data.Matrix.File.1"),colnames(celfiles.map))]
+celfiles.map$alt_sample_name <- sub("-[0-9]{2}[A-Z]-[0-9]{2}[A-Z]-[0-9]{4}-[0-9]{2}","",celfiles.map[,1])
 
-##batch information
-batch.info <- readLines("../uncurated/TCGA_file_sources.txt")
-batch.info <- do.call(rbind,strsplit(batch.info,split="/"))
-batch.info <- batch.info[,-1]
-batch.info[,1] <- sub("^.+Level_3\\.","",batch.info[,1])
-batch.info[,1] <- sub("\\.5\\.0","",batch.info[,1])
-batch.info[,2]<-sub("_lmean.out.logratio.gene.tcga_level3.data.txt","",batch.info[,2])
-batch.info <- data.frame(batch.info,stringsAsFactors=FALSE)
-colnames(batch.info) <- c("batch","Array.Data.File")
-batch.info <- batch.info[match(celfiles.map$Array.Data.File,batch.info$Array.Data.File),]
-
-if(identical(all.equal(celfiles.map$Array.Data.File,batch.info$Array.Data.File),TRUE))
-{
-  print("Adding batch info to celfiles.map")
-  celfiles.map$batch <- batch.info$batch
-}
-
-summary(clinical.slide$bcr_aliquot_uuid %in% celfiles.map$alt_sample_name)  
-summary(celfiles.map$alt_sample_name %in% clinical.slide$bcr_aliquot_uuid)  
-
-##Keep only samples for which we have a mapping to the celfile - lose 26 samples
-keep.ids <- intersect(celfiles.map$alt_sample_name,clinical.slide$bcr_aliquot_uuid)
-keep.ids<-clinical.slide[which(clinical.slide[,"bcr_aliquot_uuid"] %in% keep.ids),"bcr_sample_barcode"]
-Extract.Name<-keep.ids
-keep.ids<-substr(keep.ids,1,12)
+keep.ids <- intersect(celfiles.map$alt_sample_name,rownames(uncurated))
 uncurated <- uncurated[match(keep.ids,rownames(uncurated)),]
-uncurated$Extract.Name<-Extract.Name
+uncurated$Extract.Name <- celfiles.map[match(rownames(uncurated), celfiles.map[,3]),1]
+
 
 ##Keep primary tumors and normal tissues only.
 tumor.num <- strsplit(uncurated$Extract.Name,split="-")
@@ -53,9 +30,8 @@ rownames(uncurated) <- make.names(uncurated$Extract.Name)
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
-curated$batch <- uncurated$batch
 curated$alt_sample_name <- uncurated$Extract.Name  ##Put Extract.Name for alt_sample_name
-curated$batch <- uncurated$batch
+curated$sample_name <- curated$alt_sample_name
 curated$unique_patient_ID <- uncurated$unique_patient_id
 
 ##--------------------

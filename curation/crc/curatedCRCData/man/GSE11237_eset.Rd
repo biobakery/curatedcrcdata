@@ -1,66 +1,109 @@
-\name{GSE11237_eset}
-\alias{GSE11237_eset}
+\name{ GSE11237_eset }
+\alias{ GSE11237_eset }
 \docType{data}
-\title{Celecoxib pre-treatment in human colorectal adenocarcinoma
-  patients.}
-\description{A cohort of 23 patients with primary colorectal
-  adenocarcinomas was randomized to receive a 7-day course of celecoxib
-  (400 mg b.i.d) or no drug prior to surgical resection.  Gene
-  expression profiling was performed on resected adenocarcinomas from
-  patients with and without celecoxib pre-treatment.  Using fold change
-  (>1.5) and p-value (<0.05) cut-offs, 190 genes were differentially
-  expressed between adenocarcinomas from patients receiving celecoxib
-  and those that did not...Celecoxib pre-treatment for 7 days in vivo is
-  associated with alterations in colorectal adenocarcinoma gene
-  expression which are suggestive of diminished cellular proliferation}
-\usage{data(GSE11237_eset)}
+\title{ Celecoxib pre-treatment in human colorectal adenocarcinoma patients is associated with gene expression alterations suggestive of diminished cellular proliferation. }
+\description{ Cancer cells treated with the cyclooxygenase-2 inhibitor celecoxib show growth inhibition and induced apoptosis. This study was conducted to determine if the same processes are relevant to celecoxib's effects on human colorectal adenocarcinomas treated in vivo. A cohort of 23 patients with primary colorectal adenocarcinomas was randomised to receive a 7-d course of celecoxib (400mg b.i.d.) or no drug prior to surgical resection. Gene expression profiling was performed on resected adenocarcinomas from the cohort of patients. Using fold change (>1.5) and p-value (<0.05) cut-offs, 190 genes were differentially expressed between adenocarcinomas from patients receiving celecoxib and those that did not. The celecoxib pre-treated samples showed decreased expression levels in multiple genes involved in cellular lipid and glutathione metabolism; changes associated with diminished cellular proliferation. Celecoxib pre-treatment for 7 d in vivo is associated with alterations in colorectal adenocarcinoma gene expression which are suggestive of diminished cellular proliferation. }
+\usage{data( GSE11237_eset )}
 \format{
+\preformatted{
+experimentData(eset):
+Experiment data
+  Experimenter name: Auman JT, Church R, Lee SY, Watson MA et al. Celecoxib pre-treatment in human colorectal adenocarcinoma patients is associated with gene expression alterations suggestive of diminished cellular proliferation. Eur J Cancer 2008 Aug; 
+  Laboratory: Auman, Mcleod 2008 
+  Contact information:  
+  Title: Celecoxib pre-treatment in human colorectal adenocarcinoma patients is associated with gene expression alterations suggestive of diminished cellular proliferation. 
+  URL:  
+  PMIDs: 18653328 
 
-  Authors: Auman JT, Church R, Lee SY, Watson MA et al.
+  Abstract: A 147 word abstract is available. Use 'abstract' method.
+  Information is available on: preprocessing 
+  notes:
+   platform_title:     
+      Affymetrix Human Genome U95 Version 2 Array
+   platform_shorttitle:     
+      Affymetrix HG_U95Av2
+   platform_summary:     
+      hg_u95av2
+   platform_manufacturer:     
+      Affymetrix
+   platform_distribution:     
+      commercial
+   platform_accession:     
+      GPL8300
+   platform_technology:     
+      1
 
-  Lab: Institute for Pharmacogenomics and Individualized Therapy at the
-  University of North Carolina at Chapel Hill.
+Preprocessing: rma
+featureData(eset):
+An object of class 'AnnotatedDataFrame'
+  featureNames: AADAC AAK1 ... ZZZ3 (8933 total)
+  varLabels: probeset gene
+  varMetadata: labelDescription
 
-  Contact: jtauman@email.unc.edu
-
-  Title: Celecoxib pre-treatment in human colorectal adenocarcinoma patients.
-
-  Url: http://pubget.com/search?q=18653328
-
-  PubMedID: 18653328
-}
+}}
 \details{
-  Platform used: [HG_U95Av2] Affymetrix Human Genome U95 Version 2
-  Array.
+\preformatted{
+assayData: 8933 features, 23 samples
+Platform type: hg_u95av2
+--------------------------- 
+Available sample meta-data: 
+--------------------------- 
 
-  rma normalization used from the rma bioconductor package.
+alt_sample_name: 
+   Length     Class      Mode 
+       23 character character 
 
-  23 samples.
+sample_type: 
+tumor 
+   23 
 
-  GEO_platform_accession: GSE11237
-  platform_summary: GPL8300
-  biomart_ID: HG_U95Av2 affy_hg_u95av2
+summarygrade: 
+high  low 
+   4   19 
 
-  Overall survival time-to-event summary (in years):
-  Call: survfit(formula = Surv(time, cens) ~ -1)
+G: 
+ 1  2  3 
+ 3 16  4 
 
-  ___________________________________________________________________
+summarystage: 
+early  late 
+    4    19 
 
-  Available sample meta-data
+T: 
+ 1  2  3  4 
+ 1  3 16  3 
 
+N: 
+ 0  1  2 
+15  7  1 
 
-  ___________________________________________________________________
+M: 
+ 0  1 
+17  6 
 
-  alt_sample_name:
-  Length = 23.
-  Class = character.
-  Mode = character.
+location: 
+   Length     Class      Mode 
+       23 character character 
 
-  sample_type:
-  tumor = 23.
+gender: 
+ f  m 
+13 10 
 
-}
-\source{
-  http://www.ncbi.nlm.nih.gov/projects/geo/query/acc.cgi?acc=GSE11237
-}
+stageall: 
+1 2 3 4 
+4 9 4 6 
+
+drug_name: 
+celecoxib      NA's 
+       11        12 
+
+drug_treatment: 
+ n  y 
+12 11 
+
+uncurated_author_metadata: 
+   Length     Class      Mode 
+       23 character character 
+
+}}
 \keyword{datasets}
