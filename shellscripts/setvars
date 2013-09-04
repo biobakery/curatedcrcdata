@@ -1,4 +1,4 @@
-REXEC=`which /home/princyp/R/bin/R`
+REXEC=`which R`
 HOME=`pwd | sed -e 's|/curatedcrcdata/shellscripts||'`
 REPOSHOME=`pwd | sed -e 's|/shellscripts||'`
 SRCHOME=$HOME/curatedovariandata/src
