@@ -8,6 +8,7 @@ curated$sample_type <- tmp
 ##primary_site -> tumor_tissue_site
 tmp <- uncurated$tumor_tissue_site 
 tmp[tmp=="Colon"] <- "co"
+tmp[tmp=="Rectum"]<-"re"
 tmp[is.na(tmp)] <- NA 
 curated$primarysite <- tmp
 
@@ -32,7 +33,10 @@ curated$days_to_death<- tmp
 tmp<-uncurated$vital_status
 tmp[tmp=="LIVING"]<-"living"
 tmp[tmp=="DECEASED"]<-"deceased"
+tmp[tmp=="Alive"]<-"living"
+tmp[tmp=="Dead"]<-"deceased"
 curated$vital_status<-tmp
+
 ##MSI
 tmp<-uncurated$microsatellite_instability
 tmp[tmp=="YES"]<-"y"
@@ -51,8 +55,9 @@ tmp[tmp=="Transverse Colon"]<-"transverse"
 tmp[tmp=="Cecum"]<-"caecum"
 tmp[tmp=="Ascending Colon"]<-"ascending"
 tmp[tmp=="Hepatic Flexure"]<-"hepaticflexure"
-tmp[tmp=="Splenic Flexure"]<-NA
+tmp[tmp=="Splenic Flexure"]<-"splenicflexure"
 tmp[tmp=="Descending Colon"]<-"descending"
+tmp[tmp=="Rectum"]<-"rectum"
 curated$location<-tmp
 
 ##gender
@@ -82,5 +87,72 @@ curated$braf<-NA
 #tmp[tmp="Stage IVA"]<-4
 #tmp[tmp=="Stage I"]<-1
 #curated$stageall<-tmp
+
+tmp <- sapply(curated$unique_patient_ID,function(id)
+  clinical.drug$drug_name[clinical.drug$bcr_patient_barcode==id])
+
+tmp[sapply(tmp, length)==0] <- NA
+tmp.therapy<-sapply(curated$unique_patient_ID,function(id)
+    clinical.drug$therapy_type[clinical.drug$bcr_patient_barcode==id])
+tmp.therapy[sapply(tmp.therapy, length)==0] <- NA
+
+curated$fu <- sapply(tmp, function(x)
+  ifelse(length(grep("5 FU | 5- FU | 5-Fluorouracil | 5-Fluoruouracil | 5FU | 5-FU | Fluorouracil", x))>0, "y",
+         ifelse(is.na(x), NA,"n")))
+
+curated$bevacizumab<- sapply(tmp, function(x) ifelse(length(grep("Bevacizumab | Avastin", x))>0,"y",
+                                                     ifelse(is.na(x), NA, "n")))
+
+curated$irinotecan<-sapply(tmp, function(x) ifelse(length(grep("Camptosar | Irinotecan | Irinotecan HCl", x))>0,"y",
+                                                   ifelse(is.na(x), NA, "n")))
+
+curated$capecitabine<-sapply(tmp, function(x) ifelse(length(grep("Capecitabine", x))>0,"y",
+                                                     ifelse(is.na(x), NA, "n")))
+
+curated$cpt11<-sapply(tmp, function(x) ifelse(length(grep("CPT-11", x))>0,"y",
+                                              ifelse(is.na(x), NA, "n")))
+
+curated$dexamethasone<-sapply(tmp, function(x) ifelse(length(grep("Dexamethasone", x))>0,"y",
+                                                    ifelse(is.na(x), NA, "n")))
+curated$erbitux<-sapply(tmp, function(x) ifelse(length(grep("Erbitux | Cetuximab", x))>0,"y",
+                                                ifelse(is.na(x), NA, "n")))
+curated$gcsf<-sapply(tmp, function(x) ifelse(length(grep("Filgrastim (G-CSF)", x))>0,"y",
+                                             ifelse(is.na(x), NA, "n")))
+
+curated$fudr<-sapply(tmp, function(x) ifelse(length(grep("Floxuridine", x))>0,"y",
+                                             ifelse(is.na(x), NA, "n")))
+curated$folfiri<-sapply(tmp, function(x) ifelse(length(grep("Folfiri", x))>0,"y",
+                                                ifelse(is.na(x), NA, "n")))
+
+
+curated$folfox<-sapply(tmp, function(x) ifelse(length(grep("Folfox | FOLFOX | Folfox-4", x))>0,"y",
+                                               ifelse(is.na(x), NA, "n")))
+
+curated$leucovorin<-sapply(tmp, function(x) ifelse(length(grep("Folinic acid | Leocovorin | Leucovorin | Levcovorin | Leucovorin Calcium", x))>0,"y",
+                                            ifelse(is.na(x), NA, "n")))
+curated$mitomycin<-sapply(tmp, function(x) ifelse(length(grep("Mitomycin | Mitomycin C", x))>0,"y",
+                                                  ifelse(is.na(x), NA, "n")))
+curated$platin<-sapply(tmp, function(x) ifelse(length(grep("Oxaliplatin | oxaliplatinum+ 5-FU", x))>0,"y",
+                                               ifelse(is.na(x), NA, "n")))
+
+curated$panitumumab<-sapply(tmp, function(x) ifelse(length(grep("Panitumumab", x))>0,"y",
+                                                    ifelse(is.na(x), NA, "n")))
+
+curated$pegfilgrastim<-sapply(tmp, function(x) ifelse(length(grep("Pegfilgrastim", x))>0, "y",
+                                                      ifelse(is.na(x), NA, "n")))
+
+curated$raltitrexed<-sapply(tmp, function(x) ifelse(length(grep("Raltitrexed", x))>0, "y",
+                                                    ifelse(is.na(x), NA, "n")))
+curated$xeloda<-sapply(tmp, function(x) ifelse(length(grep("XELODA | Xeloda", x))>0, "y",
+                                               ifelse(is.na(x), NA, "n")))
+
+curated$ancillary<-sapply(tmp.therapy, function(x) ifelse(length(grep("Ancillary", x))>0, "y",
+                                                  ifelse(is.na(x), NA, "n")))
+
+curated$chemotherapy<-sapply(tmp.therapy, function(x) ifelse(length(grep("Chemotherapy", x))>0, "y",
+                                                  ifelse(is.na(x), NA, "n")))
+
+curated$moltherapy<-sapply(tmp.therapy, function(x) ifelse(length(grep("Targeted Molecular therapy", x))>0, "y",
+                                                  ifelse(is.na(x), NA, "n")))
 
 curated <- postProcess(curated, uncurated, do.celfile.batch=FALSE)

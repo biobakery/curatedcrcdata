@@ -4,7 +4,7 @@ source setvars
 
 URL="https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/coad/cgcc/unc.edu/agilentg4502a_07_3/transcriptome/"
 
-strInputAccession="TCGA"
+strInputAccession="TCGA-COAD"
 strBaseDir=$DATAHOME
 celDir=$strBaseDir/$strInputAccession
 processedDir=$celDir/PROCESSED
@@ -30,33 +30,18 @@ for file in `find . -name "*tcga_level3.data.txt"`;do mv $file .;done
 for file in `find . -name "*.sdrf.txt"`;do mv $file .;done
 rm -f *.tar.gz
 
-RCODE="
-    library(reshape2);
-    files = dir(full.names=TRUE);	
-    files = files[grep(\"tcga_level3.data.txt\", files)];
-    data <- lapply(files, read.delim, stringsAsFactors=FALSE, as.is=TRUE,skip=1);
-    sdrf <- read.delim(\"unc.edu_COAD.AgilentG4502A_07_3.sdrf.txt\",
-        as.is=TRUE);
-    sdrf<-sdrf[which(sdrf[,\"Source.Name\"]!=\"Stratagene Univeral Reference\"),];
-    barcodes <- sdrf[match(gsub(\"\\\\..*$\",\"\",gsub(\"./\",\"\",files)),
-     sdrf[,40]), 15];
-    data <- lapply(1:length(data), function(i) cbind(barcode=barcodes[i],
-      data[[i]]));
-    rdata <- do.call(rbind, data);
-     cdata <- dcast(Composite.Element.REF~barcode,data=rdata,
-     value.var=\"log2.lowess.normalized..cy5.cy3..collapsed.by.gene.symbol\");
-    write.csv(cdata, file=\"TCGA_default_exprs.csv\",
-    quote=FALSE, row.names=FALSE);
-    hgnc <- cdata[,1];
-    write.csv(data.frame(probeset=cdata[,1],hgnc=hgnc),
-    file=\"TCGA.csv\",
-    quote=FALSE,row.names=FALSE);
-    "
 
-TMPFILE=`mktemp -t cod-tcga.XXXXXXXXXX`
-echo $RCODE > "$TMPFILE"
-R --vanilla < "$TMPFILE"
-mv TCGA_default_exprs.csv $defaultDir
+
+
+
+URL="https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/read/cgcc/unc.edu/agilentg4502a_07_3/transcriptome/"
+
+sdrf="unc.edu_COAD.AgilentG4502A_07_3.sdrf.txt"
+
+$REXEC CMD BATCH --vanilla "--args COAD $sdrf" $REPOSHOME/shellscripts/tcga_PROCESSING.R $REPOSHOME/LOG/tcga_PROCESSING.log
+
+mv TCGA-COAD_default_exprs.csv $defaultDir
 mkdir $REPOSHOME/GENEMAPS
-mv TCGA.csv $REPOSHOME/GENEMAPS
+mv TCGA-COAD.csv $REPOSHOME/GENEMAPS
 mv unc.edu_COAD.AgilentG4502A_07_3.sdrf.txt $UNCURATED
+
