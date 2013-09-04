@@ -1,8 +1,6 @@
 "column.names" "variable.regex.checks"
 "GSE11237_curated_pdata.txt" TRUE TRUE
 "GSE12225-GPL3676_curated_pdata.txt" TRUE TRUE
-"GSE12520-GPL7199_curated_pdata.txt" TRUE TRUE
-"GSE12520-GPL9336_curated_pdata.txt" TRUE TRUE
 "GSE12945_curated_pdata.txt" TRUE TRUE
 "GSE13067_curated_pdata.txt" TRUE TRUE
 "GSE13294_curated_pdata.txt" TRUE TRUE
@@ -31,5 +29,7 @@
 "GSE4045_curated_pdata.txt" TRUE TRUE
 "GSE4526_curated_pdata.txt" TRUE TRUE
 "GSE45270_curated_pdata.txt" TRUE TRUE
-"TCGA_curated_pdata.txt" TRUE TRUE
+"TCGA-COAD_curated_pdata.txt" TRUE TRUE
+"TCGA-READ_curated_pdata.txt" TRUE TRUE
 "TCGA-RNASeqV2_curated_pdata.txt" TRUE TRUE
+"TCGA-RNASeqV2-READ_curated_pdata.txt" TRUE TRUE

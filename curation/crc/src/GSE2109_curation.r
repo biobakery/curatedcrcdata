@@ -1,16 +1,20 @@
 rm(list=ls())
 source("../../functions.R")
+getVal <- function(x,string){
+  output <- x[grep(string,x,fixed=TRUE)]
+  if(length(output)==0) output <- NA
+  return(output)
+}
 
 uncurated <- read.csv("../uncurated/GSE2109_full_pdata.csv",as.is=TRUE,row.names=1)
-
 ##Filter only colon samples based on primary_site
 tmp<-apply(uncurated,1,getVal,string="Primary Site: ")
 tmp<-sub("Primary Site: ","",tmp)
 tmp.1<-which(tmp=="Rectosigmoid")
 tmp.1<-c(tmp.1,which(tmp=="Colon (Extralymphatic Lymphoma)"))
 tmp.1<-c(tmp.1,which(tmp=="Colon"))
+tmp.1<-c(tmp.1,which(tmp=="Rectum"))
 uncurated<-uncurated[names(tmp.1[order(tmp.1)]),]
-
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
@@ -39,6 +43,7 @@ tmp[tmp=="American Indian"]<-"other"
 tmp[tmp=="Asian"]<-"other"
 tmp[tmp=="Hawaiian"]<-"other"
 tmp[114]<-"other"
+tmp[tmp!="caucasian | black | hispanic | other"]<-"other"
 curated$ethnicity<-tmp
 
 ##family_history
@@ -109,4 +114,4 @@ curated$M <- tmp
 curated <- postProcess(curated, uncurated)
 
 write.table(curated, row.names=FALSE, file="../curated/GSE2109_curated_pdata.txt",sep="\t")
-##filtered samples by primary_site
+

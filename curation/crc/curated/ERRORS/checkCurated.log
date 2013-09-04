@@ -1,7 +1,7 @@
 
 R version 3.0.1 (2013-05-16) -- "Good Sport"
 Copyright (C) 2013 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+Platform: x86_64-unknown-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -61,10 +61,6 @@ Type 'q()' to quit R.
 [1] "column names OK"
 [1] "Checking column names in GSE12225-GPL3676_curated_pdata.txt"
 [1] "column names OK"
-[1] "Checking column names in GSE12520-GPL7199_curated_pdata.txt"
-[1] "column names OK"
-[1] "Checking column names in GSE12520-GPL9336_curated_pdata.txt"
-[1] "column names OK"
 [1] "Checking column names in GSE12945_curated_pdata.txt"
 [1] "column names OK"
 [1] "Checking column names in GSE13067_curated_pdata.txt"
@@ -121,9 +117,13 @@ Type 'q()' to quit R.
 [1] "column names OK"
 [1] "Checking column names in GSE45270_curated_pdata.txt"
 [1] "column names OK"
-[1] "Checking column names in TCGA_curated_pdata.txt"
+[1] "Checking column names in TCGA-COAD_curated_pdata.txt"
+[1] "column names OK"
+[1] "Checking column names in TCGA-READ_curated_pdata.txt"
 [1] "column names OK"
 [1] "Checking column names in TCGA-RNASeqV2_curated_pdata.txt"
+[1] "column names OK"
+[1] "Checking column names in TCGA-RNASeqV2-READ_curated_pdata.txt"
 [1] "column names OK"
 > 
 > ##-------------------------------------------------
@@ -188,10 +188,6 @@ Type 'q()' to quit R.
 [1] "all regex checks OK"
 [1] "Checking regexes in GSE12225-GPL3676_curated_pdata.txt"
 [1] "all regex checks OK"
-[1] "Checking regexes in GSE12520-GPL7199_curated_pdata.txt"
-[1] "all regex checks OK"
-[1] "Checking regexes in GSE12520-GPL9336_curated_pdata.txt"
-[1] "all regex checks OK"
 [1] "Checking regexes in GSE12945_curated_pdata.txt"
 [1] "all regex checks OK"
 [1] "Checking regexes in GSE13067_curated_pdata.txt"
@@ -248,49 +244,53 @@ Type 'q()' to quit R.
 [1] "all regex checks OK"
 [1] "Checking regexes in GSE45270_curated_pdata.txt"
 [1] "all regex checks OK"
-[1] "Checking regexes in TCGA_curated_pdata.txt"
+[1] "Checking regexes in TCGA-COAD_curated_pdata.txt"
+[1] "all regex checks OK"
+[1] "Checking regexes in TCGA-READ_curated_pdata.txt"
 [1] "all regex checks OK"
 [1] "Checking regexes in TCGA-RNASeqV2_curated_pdata.txt"
 [1] "all regex checks OK"
+[1] "Checking regexes in TCGA-RNASeqV2-READ_curated_pdata.txt"
+[1] "all regex checks OK"
 > 
 > print(checklist)
-                                   column.names variable.regex.checks
-GSE11237_curated_pdata.txt                 TRUE                  TRUE
-GSE12225-GPL3676_curated_pdata.txt         TRUE                  TRUE
-GSE12520-GPL7199_curated_pdata.txt         TRUE                  TRUE
-GSE12520-GPL9336_curated_pdata.txt         TRUE                  TRUE
-GSE12945_curated_pdata.txt                 TRUE                  TRUE
-GSE13067_curated_pdata.txt                 TRUE                  TRUE
-GSE13294_curated_pdata.txt                 TRUE                  TRUE
-GSE14095_curated_pdata.txt                 TRUE                  TRUE
-GSE14333_curated_pdata.txt                 TRUE                  TRUE
-GSE16125-GPL5175_curated_pdata.txt         TRUE                  TRUE
-GSE17536_curated_pdata.txt                 TRUE                  TRUE
-GSE17537_curated_pdata.txt                 TRUE                  TRUE
-GSE17538-GPL570_curated_pdata.txt          TRUE                  TRUE
-GSE18105_curated_pdata.txt                 TRUE                  TRUE
-GSE2109_curated_pdata.txt                  TRUE                  TRUE
-GSE21510_curated_pdata.txt                 TRUE                  TRUE
-GSE21815_curated_pdata.txt                 TRUE                  TRUE
-GSE24549-GPL5175_curated_pdata.txt         TRUE                  TRUE
-GSE24550-GPL5175_curated_pdata.txt         TRUE                  TRUE
-GSE2630_curated_pdata.txt                  TRUE                  TRUE
-GSE26682-GPL570_curated_pdata.txt          TRUE                  TRUE
-GSE26682-GPL96_curated_pdata.txt           TRUE                  TRUE
-GSE26906_curated_pdata.txt                 TRUE                  TRUE
-GSE27544_curated_pdata.txt                 TRUE                  TRUE
-GSE28702_curated_pdata.txt                 TRUE                  TRUE
-GSE3294_curated_pdata.txt                  TRUE                  TRUE
-GSE33113_curated_pdata.txt                 TRUE                  TRUE
-GSE39582_curated_pdata.txt                 TRUE                  TRUE
-GSE3964_curated_pdata.txt                  TRUE                  TRUE
-GSE4045_curated_pdata.txt                  TRUE                  TRUE
-GSE4526_curated_pdata.txt                  TRUE                  TRUE
-GSE45270_curated_pdata.txt                 TRUE                  TRUE
-TCGA_curated_pdata.txt                     TRUE                  TRUE
-TCGA-RNASeqV2_curated_pdata.txt            TRUE                  TRUE
+                                     column.names variable.regex.checks
+GSE11237_curated_pdata.txt                   TRUE                  TRUE
+GSE12225-GPL3676_curated_pdata.txt           TRUE                  TRUE
+GSE12945_curated_pdata.txt                   TRUE                  TRUE
+GSE13067_curated_pdata.txt                   TRUE                  TRUE
+GSE13294_curated_pdata.txt                   TRUE                  TRUE
+GSE14095_curated_pdata.txt                   TRUE                  TRUE
+GSE14333_curated_pdata.txt                   TRUE                  TRUE
+GSE16125-GPL5175_curated_pdata.txt           TRUE                  TRUE
+GSE17536_curated_pdata.txt                   TRUE                  TRUE
+GSE17537_curated_pdata.txt                   TRUE                  TRUE
+GSE17538-GPL570_curated_pdata.txt            TRUE                  TRUE
+GSE18105_curated_pdata.txt                   TRUE                  TRUE
+GSE2109_curated_pdata.txt                    TRUE                  TRUE
+GSE21510_curated_pdata.txt                   TRUE                  TRUE
+GSE21815_curated_pdata.txt                   TRUE                  TRUE
+GSE24549-GPL5175_curated_pdata.txt           TRUE                  TRUE
+GSE24550-GPL5175_curated_pdata.txt           TRUE                  TRUE
+GSE2630_curated_pdata.txt                    TRUE                  TRUE
+GSE26682-GPL570_curated_pdata.txt            TRUE                  TRUE
+GSE26682-GPL96_curated_pdata.txt             TRUE                  TRUE
+GSE26906_curated_pdata.txt                   TRUE                  TRUE
+GSE27544_curated_pdata.txt                   TRUE                  TRUE
+GSE28702_curated_pdata.txt                   TRUE                  TRUE
+GSE3294_curated_pdata.txt                    TRUE                  TRUE
+GSE33113_curated_pdata.txt                   TRUE                  TRUE
+GSE39582_curated_pdata.txt                   TRUE                  TRUE
+GSE3964_curated_pdata.txt                    TRUE                  TRUE
+GSE4045_curated_pdata.txt                    TRUE                  TRUE
+GSE4526_curated_pdata.txt                    TRUE                  TRUE
+GSE45270_curated_pdata.txt                   TRUE                  TRUE
+TCGA-COAD_curated_pdata.txt                  TRUE                  TRUE
+TCGA-READ_curated_pdata.txt                  TRUE                  TRUE
+TCGA-RNASeqV2_curated_pdata.txt              TRUE                  TRUE
+TCGA-RNASeqV2-READ_curated_pdata.txt         TRUE                  TRUE
 > write.table(checklist,paste(output.dir,"checklist.txt",sep="/"))
 > 
 > proc.time()
    user  system elapsed 
-  1.508   0.040   1.601 
+  1.616   0.024   1.640 
