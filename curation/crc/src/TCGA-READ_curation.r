@@ -1,11 +1,11 @@
 rm(list=ls())
 
 source("../../functions.R")
-source("TCGA/TCGA_load_clinical_data.r")
-celfile.dir <- "../../../DATA/TCGA/RAW"
+source("TCGA/TCGA-READ_load_clinical_data.r")
+celfile.dir <- "../../../DATA/TCGA-READ/RAW"
 
 ##map between cel files and patient barcodes
-celfiles.map <- read.delim("../uncurated/unc.edu_COAD.AgilentG4502A_07_3.sdrf.txt",as.is=TRUE)
+celfiles.map <- read.delim("../uncurated/unc.edu_READ.AgilentG4502A_07_3.sdrf.txt",as.is=TRUE)
 celfiles.map<-celfiles.map[which(celfiles.map[,"Extract.Name"]!="Stratagene Univeral Reference"),]
 celfiles.map <- celfiles.map[,match(c("Comment..TCGA.Barcode.","Derived.Array.Data.Matrix.File.1"),colnames(celfiles.map))]
 celfiles.map$alt_sample_name <- sub("-[0-9]{2}[A-Z]-[0-9]{2}[A-Z]-[0-9]{4}-[0-9]{2}","",celfiles.map[,1])
@@ -39,4 +39,4 @@ curated$unique_patient_ID <- uncurated$unique_patient_id
 ##--------------------
 source("TCGA/TCGA_curation_all_platforms.r")
 
-write.table(curated, row.names=FALSE, file="../curated/TCGA_curated_pdata.txt",sep="\t")
+write.table(curated, row.names=FALSE, file="../curated/TCGA-READ_curated_pdata.txt",sep="\t")
