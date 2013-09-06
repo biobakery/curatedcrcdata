@@ -1,13 +1,14 @@
 citHeader("To cite the curatedOvarianData package in publications use:")
 
 citEntry(entry="Article",
-    title = "curatedOvarianData: Clinically Annotated Data for the Ovarian Cancer Transcriptome",
+    title = "curatedCRCData: Clinically Annotated Data for the Colorectal Cancer Transcriptome",
     author = personList(as.person("Benjamin Frederick Ganzfried"),
                         as.person("Markus Riester"),
                         as.person("Benjamin Haibe-Kains"),
                         as.person("Thomas Risch"),
                         as.person("Svitlana Tyekucheva"),
                         as.person("Ina Jazic"),
+			as.person("Princy Parsana"),
                         as.person("Xin Victoria Wang"),
                         as.person("Mahnaz Ahmadifar"),
                         as.person("Michael Birrer"),

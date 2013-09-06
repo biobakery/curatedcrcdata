@@ -15,7 +15,7 @@ test_counts <- function() {
                      stringsAsFactors = FALSE)
     df = df[order(df$PMID, df$ncol, df$nrow),]
     ## reference file was generated with the following commands on 1.2.0:
-    write.csv(df, file="../extdata/curatedCRCData_counts.csv", quote=TRUE, row.names=FALSE)
+    ##  write.csv(df, file="../extdata/curatedOvarianData_counts.csv", quote=TRUE, row.names=FALSE)
     ## dfref <- read.csv("../extdata/curatedOvarianData_counts.csv", as.is=TRUE)
     dfref <- read.csv(system.file("extdata/curatedCRCData_counts.csv", package = "curatedCRCData"), as.is=TRUE)
     sapply(1:ncol(df), function(i){

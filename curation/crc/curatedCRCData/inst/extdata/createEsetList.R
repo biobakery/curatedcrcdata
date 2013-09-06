@@ -9,6 +9,7 @@ library(genefilter)
 library(survival)
 library(logging)
 
+
 if (length(inputArgs) >=3) {
     kConfigFile <- inputArgs[1]
     source(kConfigFile)
@@ -23,11 +24,10 @@ if (length(inputArgs) >=3) {
 basicConfig()
 addHandler(writeToFile, logger="", file=kLogFile)
 
-package.name <- "curatedCRCData"
-
 loginfo("Inside script createEsetList.R - inputArgs =")
 loginfo(inputArgs)
 
+if (!exists("package.name")) package.name <- "curatedCRCData"
 
 library(package.name, character.only=TRUE)
 

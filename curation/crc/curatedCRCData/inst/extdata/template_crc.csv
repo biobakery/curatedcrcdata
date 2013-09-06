@@ -19,7 +19,7 @@ os_binary,character,non-unique,optional,short|long,"dichotomized overall surviva
 relapse_binary,character,non-unique,optional,short|long,"dichotomized relapse variable (short, long)"
 family_history,character,non-unique,optional,[yn],family history of colorectal cancer
 msi,character,non-unique,optional,[yn],microsatellite phenotype: (microsatellite instability) 
-location,character,non-unique,optional,ascending|transverse|descending|rectum|caecum|sigmoid|rectosigmoid|hepaticflexure|flexureright|co|proximal|distal|Rectosigmoid Junction,detailed location
+location,character,non-unique,optional,ascending|transverse|descending|rectum|caecum|sigmoid|rectosigmoid|hepaticflexure|splenicflexure|flexureright|co|proximal|distal|Rectosigmoid Junction,detailed location
 summarylocation,character,non-unique,optional,[lr],left or right
 gender,character,non-unique,optional,[mf],male or female
 kras,character,non-unique,optional,[yn],genome/variation: (wild type KRAS)
@@ -34,10 +34,29 @@ stageall,character,non-unique,optional,1|2|3|4,ajcc or uicc
 ethnicity,character,non-unique,optional,caucasian|black|hispanic|other,ethnic background
 dfs_status,character,non-unique,optional,living_norecurrence|deceased_or_recurrence,disease free survival censoring variable
 days_to_recurrence_or_death,integer,non-unique,optional,decimal,time to recurrence or death
-batch_1,character,non-unique,optional,*,batch variable
-batch_2,character,non-unique,optional,*,second batch variable
-batch_3,character,non-unique,optional,*,third batch variable
+batch,character,non-unique,optional,*,batch variable
 drug_name,character,non-unique,optional,*,name of the drug the samples are treated with
 drug_treatment,character,non-unique,optional,[yn],drug treated: y ; non-treated: n
 drug_response,character,non-unique,optional,[yn],responder: y ; non-responder: n
 uncurated_author_metadata,character,non-unique,optional,*,original uncurated data
+fu,character,non-unique,optional,[yn],fluorouracil treated: yes or no
+bevacizumab,character,non-unique,optional,[yn],bevacizumab treated; yes or no
+irinotecan,character,non-unique,optional,[yn], irinotecan treated: yes or no
+capecitabine,character,non-unique,optional,[yn], capecitabine treated: yes or no
+cpt11,character,non-unique,optional,[yn],CPT11 treated: yes or no
+dexamethasone,character,non-unique,optional,[yn], dexamethasone treated: yes or no
+erbitux,character,non-unique,optional,[yn],erbitux treated sample
+gcsf,character,non-unique,optional,[yn],Filgrastim treated
+fudr,character,non-unique,optional,[yn],Floxuridine treated
+folfiri,character,non-unique,optional,[yn],Folfiri treated
+folfox,character,non-unique,optional,[yn],folfox treated
+leucovorin,character,non-unique,optional,[yn],leucovorin treated
+mitomycin,character,non-unique,optional,[yn],mitomycin treated
+platin,character,non-unique,optional,[yn],platin treated
+panitumumab,character,non-unique,optional,[yn],panitumumab treated
+pegfilgrastim,character,non-unique,optional,[yn],pegfilgrastim treated
+raltitrexed,character,non-unique,optional,[yn],raltitrexed treated
+xeloda,character,non-unique,optional,[yn],xeloda treated
+ancillary,character,non-unique,optional,[yn],therapy type ancillary?
+chemotherapy,character,non-unique,optional,[yn],therapy type chemotherapy?
+moltherapy,character,non-unique,optional,[yn],therapy type Targetted Molecular Thearpy?
