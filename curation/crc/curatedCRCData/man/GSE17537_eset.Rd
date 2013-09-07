@@ -8,8 +8,8 @@
 \preformatted{
 experimentData(eset):
 Experiment data
-  Experimenter name:  
-  Laboratory:  
+  Experimenter name: Smith JJ, Deane NG, Wu F, Merchant NB et al.??Experimentally derived metastasis gene expression profile predicts recurrence and death in patients with colon cancer.??Gastroenterology??2010 Mar 
+  Laboratory: Smith JJ,??Beauchamp RD 2009 
   Contact information:  
   Title: Experimentally derived metastasis gene expression profile predicts recurrence and death in patients with colon cancer. 
   URL:  
@@ -21,17 +21,19 @@ Experiment data
    platform_title:     
       [HG-U133_Plus_2] Affymetrix Human Genome U133 Plus 2.0 Array
    platform_shorttitle:     
-      
+      Affymetrix HG-U133Plus2
    platform_summary:     
       hg-u133_plus_2
    platform_manufacturer:     
-      
+      Affymetrix
    platform_distribution:     
-      
+      commercial
    platform_accession:     
-      
+      GPL570
    platform_technology:     
-      1
+      in situ oligonucleotide
+   warnings:     
+      No warnings yet
 
 Preprocessing: frma
 featureData(eset):
