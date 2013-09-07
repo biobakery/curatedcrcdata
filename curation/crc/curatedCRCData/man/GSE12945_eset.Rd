@@ -8,8 +8,8 @@
 \preformatted{
 experimentData(eset):
 Experiment data
-  Experimenter name: Staub E, Groene J, Heinze M, Mennerich D et al. An expression module of WIPF1-coexpressed genes identifies patients with favorable prognosis in three tumor types. J Mol Med (Berl) 2009 Jun 
-  Laboratory:  
+  Experimenter name: Staub E, Groene J, Heinze M, Mennerich D et al.??An expression module of WIPF1-coexpressed genes identifies patients with favorable prognosis in three tumor types.??J Mol Med (Berl)??2009 Jun 
+  Laboratory: Staub, Rosenthal 2009 
   Contact information:  
   Title: An expression module of WIPF1-coexpressed genes identifies patients with favorable prognosis in three tumor types. 
   URL:  
@@ -21,17 +21,19 @@ Experiment data
    platform_title:     
       [HG-U133A] Affymetrix Human Genome U133A Array
    platform_shorttitle:     
-      
+      Affymetrix HG-U133A
    platform_summary:     
       hg-u133a
    platform_manufacturer:     
-      
+      Affymetrix
    platform_distribution:     
-      
+      commercial
    platform_accession:     
-      
+      GPL96
    platform_technology:     
-      1
+      in situ oligonucleotide
+   warnings:     
+      No warnings yet
 
 Preprocessing: frma
 featureData(eset):
