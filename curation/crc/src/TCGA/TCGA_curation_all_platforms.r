@@ -96,6 +96,14 @@ tmp.therapy<-sapply(curated$unique_patient_ID,function(id)
     clinical.drug$therapy_type[clinical.drug$bcr_patient_barcode==id])
 tmp.therapy[sapply(tmp.therapy, length)==0] <- NA
 
+tmp.batch<-sapply(curated$unique_patient_ID,function(id)
+	clinical.batch$BCR.batch[clinical.batch$bcr_patient_barcode==id])
+tmp.batch[sapply(tmp.batch,length)==0]<- NA
+
+curated$batch<-sapply(tmp.batch, function(x)
+	return(x))
+	
+
 curated$fu <- sapply(tmp, function(x)
   ifelse(length(grep("5 FU | 5- FU | 5-Fluorouracil | 5-Fluoruouracil | 5FU | 5-FU | Fluorouracil", x))>0, "y",
          ifelse(is.na(x), NA,"n")))
