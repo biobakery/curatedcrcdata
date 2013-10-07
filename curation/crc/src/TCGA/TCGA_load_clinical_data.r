@@ -18,6 +18,14 @@ clinical.drug <-
 clinical.drug$bcr_patient_barcode <-
   as.factor(clinical.drug$bcr_patient_barcode)
 
+##batch_information
+clinical.batch<-read.csv("../uncurated/coad_batch.csv",header=T)
+clinical.batch$Aliquot.ID<-substr(clinical.batch$Aliquot.ID,1,12)
+clinical.batch<-clinical.batch[-(which(duplicated(clinical.batch$Aliquot.ID))),]
+clinical.batch<-data.frame(clinical.batch,row.names=1)
+clinical.batch[,"bcr_patient_barcode"]<-rownames(clinical.batch)
+
+
 patient.IDs <- sapply( strsplit(rownames(follow.up), split="-"), function(x) paste(x[1:3], collapse="-") )
 ##Split the follow.up dataframe into a list, one element per unique patient ID:
 follow.up.list <- lapply( unique(patient.IDs), function(id)
