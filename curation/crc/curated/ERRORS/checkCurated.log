@@ -135,7 +135,10 @@ Type 'q()' to quit R.
 > ##regexes[template$requiredness=="optional"] <- paste(regexes[template$requiredness=="optional"],"|^NA$",sep="")
 > regexes[grep("^*$",regexes,fixed=TRUE)] <- "."
 > names(regexes) <- template$col.name
-> regexes[grep("decimal",regexes)] <- "^[0-9]+\\.?[0-9]*$"
+> if(any(grepl("decimal", regexes)))
++     regexes[grep("decimal",regexes)] <- "^[0-9]+\\.?[0-9]*$"
+> if(any(grepl("integer", regexes)))
++     regexes[grep("integer", regexes)] <- "^[0-9]+$"
 > 
 > ##remove previously existing regexerrors files
 > unlink(paste(output.dir,"/regexerrors*.txt",sep=""))
@@ -293,4 +296,4 @@ TCGA-RNASeqV2-READ_curated_pdata.txt         TRUE                  TRUE
 > 
 > proc.time()
    user  system elapsed 
-  1.616   0.024   1.640 
+  1.640   0.036   1.674 
