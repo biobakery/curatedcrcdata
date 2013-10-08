@@ -4,13 +4,13 @@ $REXEC CMD BATCH --vanilla "--args GSE11237 $DATAHOME $CURATED/GSE11237_curated_
 $REXEC CMD BATCH --vanilla "--args GSE12945 $DATAHOME $CURATED/GSE12945_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE12945_preprocess_AFFY.log
 $REXEC CMD BATCH --vanilla "--args GSE13067 $DATAHOME $CURATED/GSE13067_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE13067_preprocess_AFFY.log
 $REXEC CMD BATCH --vanilla "--args GSE13294 $DATAHOME $CURATED/GSE13294_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE13294_preprocess_AFFY.log
-$REXEC CMD BATCH --vanilla "--args GSE14095 $DATAHOME $CURATED/GSE14095_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE14095_preprocess_AFFY.log
-#$REXEC CMD BATCH --vanilla "--args GSE14333 $DATAHOME $CURATED/GSE14333_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE14333_preprocess_AFFY.log
+#$REXEC CMD BATCH --vanilla "--args GSE14095 $DATAHOME $CURATED/GSE14095_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE14095_preprocess_AFFY.log
+$REXEC CMD BATCH --vanilla "--args GSE14333 $DATAHOME $CURATED/GSE14333_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE14333_preprocess_AFFY.log
 $REXEC CMD BATCH --vanilla "--args GSE17536 $DATAHOME $CURATED/GSE17536_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE17536_preprocess_AFFY.log
 $REXEC CMD BATCH --vanilla "--args GSE17537 $DATAHOME $CURATED/GSE17537_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE17537_preprocess_AFFY.log
 $REXEC CMD BATCH --vanilla "--args GSE17538-GPL570 $DATAHOME $CURATED/GSE17538-GPL570_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE17538-GPL570_preprocess_AFFY.log
 $REXEC CMD BATCH --vanilla "--args GSE18105 $DATAHOME $CURATED/GSE18105_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE18105_preprocess_AFFY.log
-#$REXEC CMD BATCH --vanilla "--args GSE2109 $DATAHOME $CURATED/GSE2109_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE2109_preprocess_AFFY.log
+$REXEC CMD BATCH --vanilla "--args GSE2109 $DATAHOME $CURATED/GSE2109_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE2109_preprocess_AFFY.log
 $REXEC CMD BATCH --vanilla "--args GSE21510 $DATAHOME $CURATED/GSE21510_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE21510_preprocess_AFFY.log
 #$REXEC CMD BATCH --vanilla "--args GSE24549-GPL5175 $DATAHOME $CURATED/GSE24549-GPL5175_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE24549-GPL5175_preprocess_AFFY.log
 #$REXEC CMD BATCH --vanilla "--args GSE24550-GPL5175 $DATAHOME $CURATED/GSE24550-GPL5175_curated_pdata.txt" $SRCHOME/preprocess_AFFY.R $LOG/GSE24550-GPL5175_preprocess_AFFY.log
