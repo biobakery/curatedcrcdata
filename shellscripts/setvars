@@ -1,7 +1,8 @@
-REXEC=`which /home/princyp/R/bin/R`
-HOME=`pwd | sed -e 's|/curatedcrcdata/shellscripts||'`
+REXEC=`which R`
 REPOSHOME=`pwd | sed -e 's|/shellscripts||'`
-SRCHOME=$HOME/curatedovariandata/src
+# get the most recent pipeline code
+SRCHOME=`echo $REPOSHOME | sed -e 's|curatedcrcdata|curatedovariandata/src|'`
+# but then work here in this catd directory
 DATAHOME=$REPOSHOME/DATA
 CURATIONHOME=$REPOSHOME/curation/crc
 CURATIONSRC=$CURATIONHOME/src
@@ -9,4 +10,3 @@ UNCURATED=$CURATIONHOME/uncurated
 CURATED=$CURATIONHOME/curated
 QC=$REPOSHOME/qualitycontrol
 LOG=$REPOSHOME/LOG
-
