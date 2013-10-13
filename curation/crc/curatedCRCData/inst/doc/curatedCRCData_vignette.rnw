@@ -12,9 +12,10 @@ BiocStyle::latex()
 @ 
 
 \title{curatedCRCData}
-\author{Markus Riester}
+\author{Princy Parsana, Markus Riester, Levi Waldron}
 
 \begin{document}
+\date{2013}
 
 \maketitle
 \tableofcontents
@@ -94,7 +95,7 @@ source(system.file("extdata", "createEsetList.R", package =
 It is also possible to run the script from the command line and then load the
 R data file within R:
 \begin{verbatim}
-R --vanilla "--args patientselection.config ovarian.eset.rda tmp.log"  < createEsetList.R 
+R --vanilla "--args patientselection.config crc.eset.rda tmp.log"  < createEsetList.R 
 \end{verbatim}
 Now we have \Sexpr{length(esets)} datasets with samples that passed our filter in a list of
 \texttt{ExpressionSets} called \texttt{esets}:
@@ -161,8 +162,7 @@ heatmap(M[nrow(M):1,],scale="none",margins=c(8,10),Rowv=NA)
 \caption{Available clinical annotation. This heatmap visualizes for
   each curated clinical characteristic (rows) the availability in each
   dataset (columns). Red indicates that the corresponding
-  characteristic is available for at least one sample in the dataset.
-  This plot is Figure 2 of the curatedCRCData manuscript.}
+  characteristic is available for at least one sample in the dataset.}
 \end{figure}
 
 \section{Summarizing the List of ExpressionSets}
@@ -178,10 +178,9 @@ source(system.file("extdata", "summarizeEsets.R", package =
 
 
 <<esettable, echo=FALSE>>=
-summary.table <- t(sapply(esets, getEsetData, possible.stages=c("superficial",
-"invasive"), possible.histological_types=c("tcc","cis", "squamous")))
-
+summary.table <- t(sapply(esets, getEsetData))
 rownames(summary.table) <- sub("_eset", "", rownames(summary.table))
+
 @
 
 Optionally write this table to file, for example ( replace myfile <-
