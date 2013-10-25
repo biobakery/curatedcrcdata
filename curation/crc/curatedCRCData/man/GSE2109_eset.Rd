@@ -35,7 +35,7 @@ Experiment data
    warnings:     
       No warnings yet
 
-Preprocessing: default
+Preprocessing: frma
 featureData(eset):
 An object of class 'AnnotatedDataFrame'
   featureNames: A1BG A1BG-AS1 ... ZZZ3 (19320 total)

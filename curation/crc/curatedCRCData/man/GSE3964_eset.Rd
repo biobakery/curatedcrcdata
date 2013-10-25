@@ -25,7 +25,7 @@ Experiment data
    platform_summary:     
       11k_vjf-array
    platform_manufacturer:     
-      3
+      Array s/IMAGE - Genexpress
    platform_distribution:     
       non-commercial
    platform_accession:     
