@@ -25,7 +25,7 @@ Experiment data
    platform_summary:     
       nki-cmf homo sapiens 35k oligo array
    platform_manufacturer:     
-      4
+      Central Microarray Facility, NKI Amsterdam
    platform_distribution:     
       non-commercial
    platform_accession:     
