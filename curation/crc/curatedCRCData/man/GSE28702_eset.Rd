@@ -63,6 +63,10 @@ gender:
  f  m 
 20 39 
 
+batch: 
+   Length     Class      Mode 
+       59 character character 
+
 drug_name: 
 mfolfox6 
       59 

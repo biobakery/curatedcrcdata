@@ -71,6 +71,10 @@ M:
  0  1 
 94 54 
 
+batch: 
+   Length     Class      Mode 
+      148 character character 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
       148 character character 

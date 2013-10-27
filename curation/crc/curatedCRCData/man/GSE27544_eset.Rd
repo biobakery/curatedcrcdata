@@ -67,6 +67,10 @@ mss:
  n  y 
  8 14 
 
+batch: 
+2009-10-07 
+        22 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
        22 character character 

@@ -95,6 +95,10 @@ mutation_apc:
  n  y 
 19 17 
 
+batch: 
+   Length     Class      Mode 
+       36 character character 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
        36 character character 

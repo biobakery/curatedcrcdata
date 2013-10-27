@@ -87,6 +87,10 @@ days_to_recurrence_or_death:
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
    27.6   668.5  1154.0  1306.0  1785.0  4276.0      64 
 
+batch: 
+   Length     Class      Mode 
+      290 character character 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
       290 character character 

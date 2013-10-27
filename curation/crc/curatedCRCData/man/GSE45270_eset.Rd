@@ -55,6 +55,10 @@ alt_sample_name:
    Length     Class      Mode 
        13 character character 
 
+batch: 
+2012-08-23 
+        13 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
        13 character character 
