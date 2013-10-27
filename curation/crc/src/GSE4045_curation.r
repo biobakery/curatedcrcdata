@@ -3,7 +3,7 @@ source("../../functions.R")
 
 ##uncurated <- read.csv("../uncurated/pythonscript1_output_GSE_14333.csv",as.is=TRUE,row.names=1)
 uncurated.raw <- read.csv("../uncurated/GSE4045_full_pdata.csv",as.is=TRUE,row.names=1)
-
+celfile.dir <- "../../../DATA/GSE4045/RAW"
 ##all data is in the column characteristics_ch1, so parse this into its own table:
 uncurated <- strsplit(uncurated.raw$description,split=",")
 #uncurated <- strsplit(uncurated.raw$description,split=". ")
