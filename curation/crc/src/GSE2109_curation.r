@@ -7,6 +7,7 @@ getVal <- function(x,string){
 }
 
 uncurated <- read.csv("../uncurated/GSE2109_full_pdata.csv",as.is=TRUE,row.names=1)
+celfile.dir <- "../../../DATA/GSE2109/RAW"
 ##Filter only colon samples based on primary_site
 tmp<-apply(uncurated,1,getVal,string="Primary Site: ")
 tmp<-sub("Primary Site: ","",tmp)

@@ -5,7 +5,7 @@ source("../../functions.R")
 uncurated.raw <- read.csv("../uncurated/GSE28702_full_pdata.csv",as.is=TRUE,row.names=1)
 uncurated<-uncurated.raw[-(which(uncurated.raw$characteristics_ch1.1=="location: Liver")),]
 uncurated<-uncurated[-(which(uncurated$characteristics_ch1.1=="location: Lung")),]
-
+celfile.dir <- "../../../DATA/GSE28702/RAW"
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")

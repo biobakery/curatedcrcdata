@@ -2,7 +2,7 @@ rm(list=ls())
 source("../../functions.R")
 
 uncurated <- read.csv("../uncurated/GSE24550-GPL5175_full_pdata.csv",as.is=TRUE,row.names=1)
-
+celfile.dir <- "../../../DATA/GSE24550-GPL5175/RAW"
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
 

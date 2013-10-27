@@ -2,7 +2,7 @@ rm(list=ls())
 source("../../functions.R")
 
 uncurated.raw <- read.csv("../uncurated/GSE14333_full_pdata.csv",as.is=TRUE,row.names=1)
-
+celfile.dir <- "../../../DATA/GSE14333/RAW"
 ##all data is in the column characteristics_ch1, so parse this into its own table:
 uncurated <- strsplit(uncurated.raw$characteristics_ch1,split="; ")
 uncurated <- do.call(rbind,uncurated)
