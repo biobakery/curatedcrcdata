@@ -95,6 +95,10 @@ ethnicity:
 other 
   428 
 
+batch: 
+   Length     Class      Mode 
+      428 character character 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
       428 character character 

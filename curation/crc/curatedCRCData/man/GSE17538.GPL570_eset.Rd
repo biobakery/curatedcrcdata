@@ -102,6 +102,10 @@ ethnicity:
     black caucasian  hispanic     other 
        13       206         2        17 
 
+batch: 
+   Length     Class      Mode 
+      238 character character 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
       238 character character 

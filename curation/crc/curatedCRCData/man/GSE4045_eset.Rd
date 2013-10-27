@@ -87,6 +87,10 @@ stageall:
  2  3  4 
  2 33  2 
 
+batch: 
+   Length     Class      Mode 
+       37 character character 
+
 uncurated_author_metadata: 
    Length     Class      Mode 
        37 character character 
