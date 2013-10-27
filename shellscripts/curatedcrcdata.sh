@@ -18,8 +18,8 @@ sed -i -e 's/curatedCRCData/NormalizerVcuratedCRCData/g' $REPOSHOME/curation/crc
 sed -i -e 's/curatedCRCData/NormalizerVcuratedCRCData/g' $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/inst/extdata/*
 mv $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/man/curatedCRCData-package.Rd $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/man/NormalizerVcuratedCRCData-package.Rd
 sed -i -e 's/curatedCRCData/NormalizerVcuratedCRCData/g' $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/man/NormalizerVcuratedCRCData-package.Rd
-sed -i -e 's/curatedCRCData/NormalizerVcuratedCRCData/g' $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/inst/unitTests/*
-sed -i -e 's/curatedCRCData/NormalizerVcuratedCRCData/g' $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/tests/*
+#sed -i -e 's/curatedCRCData/NormalizerVcuratedCRCData/g' $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/inst/unitTests/*
+#sed -i -e 's/curatedCRCData/NormalizerVcuratedCRCData/g' $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/tests/*
 cp $REPOSHOME/MAPPED/DATA/Normalizer/*.rda $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/data
 cp $REPOSHOME/MAPPED/DATA/Normalizer/*.Rd $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/man
 rm -r $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/inst/doc
@@ -27,11 +27,11 @@ rm -r $REPOSHOME/curation/crc/NormalizerVcuratedCRCData/inst/doc
 ##prepare directories for FULL version:
 cp -a $REPOSHOME/curation/crc/curatedCRCData $REPOSHOME/curation/crc/FULLVcuratedCRCData
 sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/crc/FULLVcuratedCRCData/DESCRIPTION
-sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/ovarian/FULLVcuratedOvarianData/inst/extdata/*
+sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/crc/FULLVcuratedCRCData/inst/extdata/*
 mv $REPOSHOME/curation/crc/FULLVcuratedCRCData/man/curatedCRCData-package.Rd $REPOSHOME/curation/crc/FULLVcuratedCRCData/man/FULLVcuratedCRCData-package.Rd
 sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/crc/FULLVcuratedCRCData/man/FULLVcuratedCRCData-package.Rd
-sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/crc/FULLVcuratedCRCData/inst/unitTests/*
-sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/crc/FULLVcuratedCRCData/tests/*
+#sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/crc/FULLVcuratedCRCData/inst/unitTests/*
+#sed -i -e 's/curatedCRCData/FULLVcuratedCRCData/g' $REPOSHOME/curation/crc/FULLVcuratedCRCData/tests/*
 cp $REPOSHOME/MAPPED/DATA/FULL/*.rda $REPOSHOME/curation/crc/FULLVcuratedCRCData/data
 cp $REPOSHOME/MAPPED/DATA/FULL/*.Rd $REPOSHOME/curation/crc/FULLVcuratedCRCData/man
 rm -r $REPOSHOME/curation/crc/FULLVcuratedCRCData/inst/doc
