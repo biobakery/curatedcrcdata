@@ -9,7 +9,7 @@ Description: The curatedCRC package provides relevant functions and data for gen
 Depends: R (>= 2.10.0), nlme
 Suggests: survival,sva,BiocStyle
 License: Artistic-2.0
-Packaged: 2012-05-08 00:53:56 UTC; benganz
+URL: http://www.waldronlab.org
 Namespace: auto
 biocViews: Colorectal, Cancer, TCGA, ExperimentData
 URL: https://bitbucket.org/lwaldron/curatedcrcdata
