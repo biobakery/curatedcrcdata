@@ -7,7 +7,7 @@ Author: Princy Parsana, Markus Riester, Curtis Huttenhower, Levi Waldron
 Maintainer: Princy Parsana <princyparsana@jhu.edu>
 Description: The curatedCRC package provides relevant functions and data for gene expression analysis in patients with colorectal cancer.
 Depends: R (>= 2.10.0), nlme
-Suggests: survival,sva,BiocStyle
+Suggests: survival,sva,BiocStyle, xtable, genefilter, logging
 License: Artistic-2.0
 Packaged: 2012-05-08 00:53:56 UTC; benganz
 Namespace: auto

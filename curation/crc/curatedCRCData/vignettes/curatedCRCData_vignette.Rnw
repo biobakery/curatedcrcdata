@@ -12,7 +12,7 @@ BiocStyle::latex()
 @ 
 
 \title{curatedCRCData}
-\author{Princy Parsana, Markus Riester, Levi Waldron}
+\author{Princy Parsana, Markus Riester, Curtis Huttenhower, Levi Waldron}
 
 \begin{document}
 \date{2013}
@@ -22,6 +22,7 @@ BiocStyle::latex()
 
 <<preliminaries,echo=FALSE,results=hide>>=
 library(sva)
+library(xtable)
 @ 
 
 \section{curatedCRCData: Clinically Annotated Data for the colorectal Cancer
