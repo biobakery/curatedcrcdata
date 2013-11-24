@@ -6,7 +6,6 @@ citEntry(entry="Unpublished",
 			   as.person("Markus Riester"),
                         as.person("Levi Waldron")),
 note="This is a manually curated data collection for gene expression meta-analysis of patients with colorectal cancer. This resource provides uniformly prepared microarray data with curated and documented clinical metadata. It allows users to efficiently identify studies and patient subgroups of interest for analysis and to perform meta-analysis immediately without the challenges posed by harmonizing heterogeneous microarray technologies, study designs, expression data processing methods and clinical data formats.",
-volume = 2013, 
-year = 2013, 
+textVersion= NULL
 )
 
