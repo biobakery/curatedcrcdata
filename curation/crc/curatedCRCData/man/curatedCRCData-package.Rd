@@ -20,7 +20,7 @@ Princy Parsana, Markus Riester, Levi Waldron
 
 Department of Biostatistics and Computational Biology, Dana-Farber Cancer Institute, Harvard School of Public Health
 
-Maintainer: Levi Waldron <levi@jimmy.harvard.edu>
+Maintainer: Princh Parsana <princyparsana@jhu.edu>
 }
 
 \examples{
