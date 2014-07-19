@@ -11,6 +11,7 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.
 tmp <- uncurated$title
 curated$alt_sample_name <- tmp
 
+#sample_type
 curated$sample_type <- "tumor"
 
 ##msi
@@ -18,14 +19,6 @@ tmp <- uncurated$characteristics_ch1
 tmp[tmp=="MSI"] <- "y"
 tmp[tmp=="MSS"] <- "n"
 curated$msi <- tmp
-
-##mss
-tmp <- uncurated$characteristics_ch1
-tmp[tmp=="MSS"] <- "y"
-tmp[tmp=="MSI"] <- "n"
-curated$mss <- tmp
-
-curated$sample_type<-"tumor"
 
 curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE13067_curated_pdata.txt",sep="\t")
