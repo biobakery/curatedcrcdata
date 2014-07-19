@@ -1,3 +1,4 @@
+
 rm(list=ls())
 source("../../functions.R")
 
@@ -34,6 +35,9 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.
 tmp <- uncurated.raw$title
 curated$alt_sample_name <- tmp
 
+##sample_type
+curated$sample_type<-"tumor"
+
 ##X6-> gender
 tmp <- uncurated$X6
 tmp <- sub("male","m",tmp,fixed=TRUE)
@@ -42,25 +46,43 @@ tmp <- sub(" m","m",tmp,fixed=TRUE)
 tmp <- sub(" f","f",tmp,fixed=TRUE)
 curated$gender <- tmp 
 
+##Dstage 
+tmp<-uncurated$X3
+tmp <- sub(" Dukes Stage c","C",tmp,fixed=TRUE)
+tmp <- sub(" Dukes Stage b","B",tmp,fixed=TRUE)
+tmp <- sub(" Dukes Stage d","D",tmp,fixed=TRUE)
+curated$Dstage <- tmp 
 
 ##Dukes becomes stageall 
 tmp<-uncurated$X3
 tmp <- sub(" Dukes Stage c","3",tmp,fixed=TRUE)
-tmp <- sub(" Dukes Stage b","2",tmp,fixed=TRUE)
+tmp <- sub(" Dukes Stage b", NA,tmp,fixed=TRUE)
 tmp <- sub(" Dukes Stage d","4",tmp,fixed=TRUE)
 curated$stageall <- tmp 
 
-##MSS
-tmp<-uncurated$X4
-tmp[tmp==" MSS"]<-"y"
-tmp[tmp==" MSI"]<-"n"
-curated$mss<-tmp
+##summarystage
+tmp<-uncurated$X3
+tmp <- sub(" Dukes Stage c","late",tmp,fixed=TRUE)
+tmp <- sub(" Dukes Stage b","early",tmp,fixed=TRUE)
+tmp <- sub(" Dukes Stage d","late",tmp,fixed=TRUE)
+curated$summarystage <- tmp 
+
+##N
+tmp<-uncurated$X3
+tmp<-sub("Dukes Stage b",0,tmp,fixed=TRUE)
+tmp[tmp==" Dukes Stage c"]<-NA
+tmp[tmp==" Dukes Stage d"]<-NA
+curated$N<-tmp
+
+#M
+tmp<-uncurated$X3
+tmp<-sub(" Dukes Stage c", 0,tmp,fixed=TRUE)
+tmp<-sub(" Dukes Stage b", 0,tmp,fixed=TRUE)
+tmp<-sub(" Dukes Stage d", 1,tmp,fixed=TRUE)
+curated$M<-tmp
 
 #MSI
-tmp<-uncurated$X4
-tmp[tmp==" MSS"]<-"n"
-tmp[tmp==" MSI"]<-"y"
-curated$msi<-tmp
+curated$msi<-uncurated$X4
 
 ##family_history
 tmp <- uncurated$X5
@@ -75,6 +97,12 @@ tmp <- uncurated$X7
 tmp <- sub(" Proximal Location ","proximal",tmp,fixed=TRUE)
 tmp <- sub(" Distal Location ","distal",tmp,fixed=TRUE)
 curated$location <- tmp
+
+##summarylocation
+tmp <- uncurated$X7
+tmp <- sub(" Proximal Location ","r",tmp,fixed=TRUE)
+tmp <- sub(" Distal Location ","l",tmp,fixed=TRUE)
+curated$summarylocation <- tmp
 
 ##summarygrade
 tmp <- uncurated$X8
