@@ -7,7 +7,7 @@ primarysite,character,non-unique,optional,co|re,co = colon; re= rectum
 summarygrade,character,non-unique,optional,low|high,"low = 1,2; high = 3,4"
 G,character,non-unique,optional,1|2|3|4,"G(1-4): If multiple given, ie 12, 23, use highest given. (1=well-differentiated, 2=moderately differentiated, 3=poorly differentiated, 4=undifferentiated)"
 summarystage,character,non-unique,optional,early|late,early = T stage of Tis through T3 and N0 and M0; late = T stage of 4 or any N>0 or M>0
-T,character,non-unique,optional,0|is|X1|2|3|4,"Pathologic T stage: If multiple given, ie 12, 23, use highest given"
+T,character,non-unique,optional,0|1|X1|2|3|4,"Pathologic T stage: If multiple given, ie 12, 23, use highest given"
 N,character,non-unique,optional,0|1|2|X,N stage: degree of spread to regional lymph nodes
 M,character,non-unique,optional,0|1|X,M stage: presence of metastasis
 Dstage,character,non-unique,optional,A|B|C|D,Dukes' classification stage
