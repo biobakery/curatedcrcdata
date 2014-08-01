@@ -17,7 +17,9 @@ $REXEC CMD BATCH --vanilla $SRCHOME/install_needed_packages.R $LOG/install_neede
 $REXEC CMD BATCH --vanilla $SRCHOME/blast_gene_maps.R $LOG/blast_gene_maps.log
 $REXEC CMD BATCH --vanilla $SRCHOME/getPlatforms.R $LOG/getPlatforms.log
 
+
 #Do the mapping.
+$REXEC CMD BATCH --vanilla gpl5175.R $LOG/gpl5175.log
 ./crcgenemapper.sh
 $REXEC CMD BATCH --vanilla $SRCHOME/collapseRows.R $LOG/collapseRows.log
 
