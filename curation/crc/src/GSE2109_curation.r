@@ -80,6 +80,7 @@ curated$ethnicity<-tmp
 tmp <- apply(uncurated,1,getVal,string="Pathological T:")
 tmp <- sub("Pathological T: ","",tmp,fixed=TRUE)
 tmp <- sub("[abc]","",tmp)
+#tmp[tmp=="is"]<-NA
 curated$T <- tmp
 
 ##summarystage
@@ -99,7 +100,7 @@ curated$summarystage <- tmp
 ##Pathological stage: -> stageall
 tmp <- apply(uncurated,1,getVal,string="Pathological Stage:")
 tmp <- sub("Pathological Stage: ","",tmp,fixed=TRUE)
-#tmp <- sub("[ABC]","",tmp)
+tmp <- sub("[ABC]","",tmp)
 tmp[tmp=="X"] <- NA
 tmp[tmp=="Unknown"] <- NA
 curated$stageall <- tmp

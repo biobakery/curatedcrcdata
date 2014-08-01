@@ -16,6 +16,8 @@ curated$primarysite <- tmp
 race<-uncurated$race
 race[race=="WHITE"]<-"caucasian"
 race[race=="BLACK OR AFRICAN AMERICAN"]<-"black"
+race[race=="AMERICAN INDIAN OR ALASKA NATIVE"]<-"other"
+race[race=="ASIAN"]<-"other"
 curated$ethnicity<-race
 
 ##age_at_initial_pathologic_diagnosis
@@ -92,8 +94,8 @@ curated$gender<-tmp
 
 ##kras
 tmp<-uncurated$kras_mutation_found
-tmp[tmp=="YES"]<-"y"
-tmp[tmp=="NO"]<-"n"
+tmp[tmp=="YES"]<-"mutant"
+tmp[tmp=="NO"]<-"wt"
 curated$kras<-tmp
 
 curated$braf<-NA
@@ -162,12 +164,14 @@ tmp[tmp=="Stage IA"]<-1
 tmp[tmp=="Stage IIA"]<-2
 tmp[tmp=="Stage II"]<-2
 tmp[tmp=="Stage IIB"]<-2
+tmp[tmp=="Stage IIC"]<-2
 tmp[tmp=="Stage IIIB"]<-3
 tmp[tmp=="Stage III"]<-3
 tmp[tmp=="Stage IIIA"]<-3
 tmp[tmp=="Stage IIIC"]<-3
 tmp[tmp=="Stage IV"]<-4
 tmp[tmp=="Stage IVA"]<-4
+tmp[tmp=="Stage IVB"]<-4
 tmp[tmp=="Stage I"]<-1
 tmp[tmp=="NA"]<-NA
 curated$stageall<-tmp

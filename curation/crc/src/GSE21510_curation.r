@@ -28,6 +28,7 @@ tmp <- gsub("[^\\d]","",tmp,perl=TRUE)
 curated$stageall <- tmp 
 
 ##Dstage
+tmp[tmp=="0"]<-NA
 tmp[tmp=="1"] <- NA
 tmp[tmp=="2"] <-"B"
 tmp[tmp=="3"] <-"C"
@@ -40,6 +41,7 @@ tmp <- sub("stage: ","",tmp,fixed=TRUE)
 tmp <- gsub("[^\\d]","",tmp,perl=TRUE)
 tmp[tmp=="1 "]<-"early"
 tmp[tmp==2]<- NA
+tmp[tmp=="0"]<-NA
 tmp[tmp > 2]<-"late"
 curated$summarystage <- tmp 
 

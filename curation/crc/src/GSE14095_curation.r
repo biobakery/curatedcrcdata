@@ -18,6 +18,7 @@ curated$sample_type<-"tumor"
 tmp<-uncurated$characteristics_ch1.1
 tmp[tmp=="treatment response: FL_Non_responder"]<-"n"
 tmp[tmp=="treatment response: FL_Responder"]<-"y"
+tmp[tmp==""]<-NA
 curated$drug_response<-tmp
 
 curated <- postProcess(curated, uncurated)

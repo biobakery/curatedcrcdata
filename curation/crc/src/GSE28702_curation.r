@@ -15,13 +15,14 @@ uncurated1$title2<-tmptitle
 
 uncurated <- merge( uncurated1, uncurated2, by.x="title2", by.y="Sample.number")
 
+rownames(uncurated)<-uncurated$geo_accession
 # celfile.dir <- "../../../DATA/GSE28702/RAW"
 
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
 
 ##title -> alt_sample_name
-curated$alt_sample_name <- uncurated$title
+curated$alt_sample_name <- uncurated$geo_accession
 
 ##sample_type
 tmp<-apply(uncurated,1,getVal,string="lesion: ")
