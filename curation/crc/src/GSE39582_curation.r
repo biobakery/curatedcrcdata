@@ -8,12 +8,13 @@ uncurated2 <- read.csv("../uncurated/GSE_39582 addtl data.csv",as.is=TRUE)
 uncurated <- merge( uncurated1, uncurated2, by.x="title", by.y="id")
 
 celfile.dir <- "../../../DATA/GSE39582/RAW"
-
+rownames(uncurated)<-uncurated$geo_accession
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
 
 ##title -> alt_sample_name
-curated$alt_sample_name <- uncurated$title
+curated$alt_sample_name <- uncurated$geo_accession
+
 
 ##sample_type
 curated$sample_type<-"tumor"

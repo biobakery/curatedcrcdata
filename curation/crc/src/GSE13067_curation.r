@@ -16,8 +16,8 @@ curated$sample_type <- "tumor"
 
 ##msi
 tmp <- uncurated$characteristics_ch1
-tmp[tmp=="MSI"] <- "y"
-tmp[tmp=="MSS"] <- "n"
+tmp[tmp=="MSI"] <- "MSI"
+tmp[tmp=="MSS"] <- "MSS"
 curated$msi <- tmp
 
 curated <- postProcess(curated, uncurated)

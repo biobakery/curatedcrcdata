@@ -154,6 +154,7 @@ curated$N <- tmp
 tmp <-uncurated$characteristics_ch1.12
 tmp <- sub("pM: ","",tmp,fixed=TRUE)
 #tmp[tmp=="x"] <- NA
+tmp[tmp=="x"]<-"X"
 curated$M <- tmp
 
 # #Dstage

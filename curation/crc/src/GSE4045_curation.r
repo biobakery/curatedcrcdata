@@ -72,7 +72,7 @@ tmp<-uncurated$X3
 tmp<-sub("Dukes Stage b",0,tmp,fixed=TRUE)
 tmp[tmp==" Dukes Stage c"]<-NA
 tmp[tmp==" Dukes Stage d"]<-NA
-curated$N<-tmp
+
 
 #M
 tmp<-uncurated$X3
@@ -82,7 +82,11 @@ tmp<-sub(" Dukes Stage d", 1,tmp,fixed=TRUE)
 curated$M<-tmp
 
 #MSI
-curated$msi<-uncurated$X4
+tmp<-uncurated$X4
+tmp<-sub(" MSS","MSS",tmp)
+tmp<-sub(" MSI","MSI",tmp)
+curated$msi<-tmp
+
 
 ##family_history
 tmp <- uncurated$X5

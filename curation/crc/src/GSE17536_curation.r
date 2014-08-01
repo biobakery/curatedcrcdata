@@ -29,7 +29,7 @@ curated$primarysite <- "co"
 curated$sample_type <- "tumor"
 
 ##preop_drug_treatment
-curated$preop_drug_treatment <- "no"
+curated$preop_drug_treatment <- "n"
 
 #age
 tmp <- uncurated$characteristics_ch1
@@ -80,6 +80,7 @@ tmp[tmp=="4"] <- "D"
 curated$Dstage <- tmp
 
 #summarystage
+tmp <- uncurated$characteristics_ch1.3
 tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
 tmp[tmp=="1"] <- "early"
 tmp[tmp=="2"] <- NA

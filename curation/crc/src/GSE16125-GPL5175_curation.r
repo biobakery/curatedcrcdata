@@ -83,8 +83,8 @@ curated$preop_drug_treatment <- "n"
 
 ##kras
 tmp <- uncurated$characteristics_ch1.7
-tmp[tmp=="kras: 1"] <-"y"
-tmp[tmp=="kras: 0"] <-"n"
+tmp[tmp=="kras: 1"] <-"mutant"
+tmp[tmp=="kras: 0"] <-"wt"
 curated$kras <- tmp
 
 ##apc

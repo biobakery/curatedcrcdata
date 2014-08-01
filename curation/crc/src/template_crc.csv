@@ -7,7 +7,7 @@ primarysite,character,non-unique,optional,co|re,co = colon; re= rectum
 summarygrade,character,non-unique,optional,low|high,"low = 1,2; high = 3,4"
 G,character,non-unique,optional,1|2|3|4,"G(1-4): If multiple given, ie 12, 23, use highest given. (1=well-differentiated, 2=moderately differentiated, 3=poorly differentiated, 4=undifferentiated)"
 summarystage,character,non-unique,optional,early|late,early = T stage of Tis through T3 and N0 and M0; late = T stage of 4 or any N>0 or M>0
-T,character,non-unique,optional,0|1|X1|2|3|4,"Pathologic T stage: If multiple given, ie 12, 23, use highest given"
+T,character,non-unique,optional,0|X|is|1|2|3|4,"Pathologic T stage: If multiple given, ie 12, 23, use highest given"
 N,character,non-unique,optional,0|1|2|X,N stage: degree of spread to regional lymph nodes
 M,character,non-unique,optional,0|1|X,M stage: presence of metastasis
 Dstage,character,non-unique,optional,A|B|C|D,Dukes' classification stage
@@ -24,10 +24,10 @@ gender,character,non-unique,optional,[mf],male or female
 kras,character,non-unique,optional,mutant|wt,KRAS mutation status
 braf,character,non-unique,optional,mutant|wt,BRAF mutation status
 line1,character,non-unique,optional,[yn],LINE-1 hypomethylation status (y= hypomethylated)
-tumor_size,integer,non-unique,optional,[1-10],centimeters
+tumor_size,numeric,non-unique,optional,[0-9][\.]?[0-9]?,centimeters
 mutation_apc,character,non-unique,optional,[yn],any APC mutation
-lymphnodesremoved,integer,non-unique,optional,[1-9][0-9],"why is this an integer 10-99, and what does it mean?"
-lymphnodesinvaded,integer,non-unique,optional,[1-9][0-9],"why is this an integer 10-99, and what does it mean?"
+lymphnodesremoved,integer,non-unique,optional,[0-9][0-9]*,"why is this an integer 10-99, and what does it mean?"
+lymphnodesinvaded,integer,non-unique,optional,[0-9][0-9]?,"why is this an integer 10-99, and what does it mean?"
 stageall,character,non-unique,optional,0|1|2|3|4,ajcc or uicc stage
 ethnicity,character,non-unique,optional,caucasian|black|hispanic|other,ethnic background
 dfs_status,character,non-unique,optional,living_norecurrence|deceased_or_recurrence,disease free survival censoring variable

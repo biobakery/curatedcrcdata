@@ -81,8 +81,8 @@ curated$gender<-tmp
 
 ##kras
 tmp<-uncurated$kras_mutation_found
-tmp[tmp=="YES"]<-"y"
-tmp[tmp=="NO"]<-"n"
+tmp[tmp=="YES"]<-"mutant"
+tmp[tmp=="NO"]<-"wt"
 curated$kras<-tmp
 
 curated$braf<-NA
@@ -201,7 +201,7 @@ curated$capecitabine<-sapply(tmp, function(x) ifelse(length(grep("Capecitabine |
 curated$dexamethasone<-sapply(tmp, function(x) ifelse(length(grep("Dexamethasone | Calcium Foliatum, fluorouracilum, oxaliplatinum, dexamethassone", x))>0,"y",
                                                     ifelse(is.na(x), NA, "n")))
 
-curated$erbitux<-sapply(tmp, function(x) ifelse(length(grep("Erbitux | Cetuximab | Cetuximab Study drug", x))>0,"y",
+curated$cetuximab<-sapply(tmp, function(x) ifelse(length(grep("Erbitux | Cetuximab | Cetuximab Study drug", x))>0,"y",
                                                 ifelse(is.na(x), NA, "n")))
 
 curated$gcsf<-sapply(tmp, function(x) ifelse(length(grep("Filgrastim (G-CSF)", x))>0,"y",

@@ -16,10 +16,12 @@ uncurated1$title2 <- substring( uncurated1$title, first=7 )
 
 uncurated <- merge( uncurated1, uncurated2, by.x="title2", by.y="X1")
 
+rownames(uncurated)<-uncurated$geo_accession
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
 
-curated$alt_sample_name<-uncurated$title
+curated$alt_sample_name<-uncurated$geo_accession
+
 
 ##sample_type
 curated$sample_type<-"tumor"
