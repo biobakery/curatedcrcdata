@@ -1,13 +1,19 @@
+
 rm(list=ls())
 
 source("../../functions.R")
 
-uncurated <- read.csv("../uncurated/GSE17538-GPL570_full_pdata.csv",as.is=TRUE,row.names=1)
+uncurated.raw <- read.csv("../uncurated/GSE17538-GPL570_full_pdata.csv",as.is=TRUE,row.names=1)
+uncurated<-uncurated.raw[1:232,]
 celfile.dir <- "../../../DATA/GSE17538-GPL570/RAW"
+
 ##initial creation of curated dataframe
 curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.csv")
 #alt_sample_name
 curated$alt_sample_name <- uncurated$title
+
+#sample_type
+curated$sample_type <- "tumor"
 
 #age
 tmp <- uncurated$characteristics_ch1
@@ -33,6 +39,40 @@ tmp <- apply(uncurated,1,getVal,string="ajcc_stage: ")
 tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
 curated$stageall <- tmp
 
+#Dstage
+tmp[tmp=="1"] <- NA
+tmp[tmp=="2"] <- "B"
+tmp[tmp=="3"] <- "C"
+tmp[tmp=="4"] <- "D"
+curated$Dstage <- tmp
+
+#N
+tmp <- apply(uncurated,1,getVal,string="ajcc_stage: ")
+tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
+tmp[tmp=="1"] <- "0"
+tmp[tmp=="2"] <- "0"
+tmp[tmp=="3"] <- NA
+tmp[tmp=="4"] <- NA
+curated$N <- tmp
+
+#M
+tmp <- apply(uncurated,1,getVal,string="ajcc_stage: ")
+tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
+tmp[tmp=="1"] <- "0"
+tmp[tmp=="2"] <- "0"
+tmp[tmp=="3"] <- "0"
+tmp[tmp=="4"] <- "1"
+curated$M <- tmp
+
+#summarystage
+tmp <- apply(uncurated,1,getVal,string="ajcc_stage: ")
+tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
+tmp[tmp=="1"] <- "early"
+tmp[tmp=="2"] <- NA
+tmp[tmp=="3"] <- "late"
+tmp[tmp=="4"] <- "late"
+curated$summarystage <- tmp
+
 #G
 tmp <- apply(uncurated,1,getVal,string="grade: ")
 tmp <- gsub("[^\\d]","",tmp,perl=TRUE)
@@ -49,7 +89,6 @@ tmp[tmp=="4"] <- "high"
 tmp[tmp=="21"] <- "low"
 tmp[tmp==""] <- NA
 curated$summarygrade <- tmp
-
 
 ##vital_status
 tmp <- apply(uncurated,1,getVal,string="overall_event (death from any cause): ")
@@ -77,6 +116,13 @@ tmp <- sub("dfs_time: ","",tmp,fixed=TRUE)
 tmp <- as.numeric(tmp)
 tmp <- tmp * 30  #months to days
 curated$days_to_tumor_recurrence <- tmp
+
+##disease specific mortality
+tmp <- apply(uncurated,1,getVal,string="dss_event (disease specific survival; death from cancer): ")
+tmp <- sub("dss_event (disease specific survival; death from cancer): ","",tmp,fixed=TRUE)
+tmp[tmp=="no death"] <- "n"
+tmp[tmp=="death"] <- "y"
+curated$disease_specific_mortality <- tmp
 
 curated <- postProcess(curated, uncurated)
 write.table(curated, row.names=FALSE, file="../curated/GSE17538-GPL570_curated_pdata.txt",sep="\t")

@@ -1,3 +1,4 @@
+
 rm(list=ls())
 source("../../functions.R")
 source("TCGA/TCGA_load_clinical_data.r")
@@ -36,6 +37,6 @@ curated$unique_patient_ID <- uncurated$unique_patient_id
 ##--------------------
 ##start the curation
 ##--------------------
-source("TCGA/TCGA_curation_all_platforms.r")
+source("TCGA/TCGA_curation_all_platforms_COAD.r")
 
 write.table(curated, row.names=FALSE, file="../curated/TCGA-COAD_curated_pdata.txt",sep="\t")
