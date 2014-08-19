@@ -13,15 +13,7 @@ curated$alt_sample_name <- tmp
 
 ##msi
 tmp <- uncurated$characteristics_ch1
-tmp[tmp=="MSI"] <- "y"
-tmp[tmp=="MSS"] <- "n"
 curated$msi <- tmp
-
-##mss
-tmp <- uncurated$characteristics_ch1
-tmp[tmp=="MSS"] <- "y"
-tmp[tmp=="MSI"] <- "n"
-curated$mss <- tmp
 
 ##sample_type
 curated$sample_type<-"tumor"
