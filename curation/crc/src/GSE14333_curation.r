@@ -87,7 +87,7 @@ curated$Dstage<-tmp
 tmp <- uncurated$X3
 tmp<-sub("Age_Diag: ","",tmp)
 tmp <- round(as.numeric(tmp))
-curated$age_at_initial_pathologic_diagnosis <- tmp  
+curated$age_at_initial_pathologic_diagnosis <- tmp
 
 #gender
 tmp <- uncurated$X4
@@ -99,12 +99,12 @@ curated$gender <- tmp
 #preop_drug_treatment
 curated$preop_drug_treatment <- "n"
 
-#dfs_status
-tmp<- uncurated$X6
-tmp<-sub("DFS_Cens: ","",tmp)
-tmp <- sub("0", "living_norecurrence", tmp, fixed=TRUE)
-tmp[tmp=="1"] <- "deceased_or_recurrence"
-tmp[tmp=="NA"] <- NA
+#dfs_status - very unusual, but the authors used 1 for censored, 0 for
+#event:
+tmp <- uncurated$X6
+tmp <- sub("DFS_Cens: 1", "living_norecurrence", tmp, fixed=TRUE)
+tmp <- sub("DFS_Cens: 0", "deceased_or_recurrence", tmp, fixed=TRUE)
+tmp <- sub("DFS_Cens: NA", NA, tmp, fixed=TRUE)
 curated$dfs_status <- tmp
 
 #days_to_recurrence_or_death
