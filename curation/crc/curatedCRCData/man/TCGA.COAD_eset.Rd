@@ -74,6 +74,22 @@ primarysite:
   co NA's 
  129    1 
 
+summarystage: 
+early  late  NA's 
+   75    54     1 
+
+T: 
+ 1  2  3  4 
+ 3 27 88 12 
+
+N: 
+   0    1    2 NA's 
+  80   22   27    1 
+
+M: 
+   0    1 NA's 
+ 108   21    1 
+
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   36.00   65.00   72.00   70.89   80.00   90.00 
@@ -87,28 +103,40 @@ deceased   living     NA's
        5       15      110 
 
 msi: 
-   n    y NA's 
-   4    1  125 
+ MSI  MSS NA's 
+   1    4  125 
 
 location: 
    Length     Class      Mode 
       130 character character 
+
+summarylocation: 
+   l    r NA's 
+  59   70    1 
 
 gender: 
  f  m 
 67 63 
 
 kras: 
-   n    y NA's 
-   1    2  127 
+mutant     wt   NA's 
+     2      1    127 
 
-mss: 
-   n    y NA's 
-   1    4  125 
+stageall: 
+   1    2    3    4 NA's 
+  25   51   30   20    4 
 
-uncurated_author_metadata: 
-   Length     Class      Mode 
-      130 character character 
+ethnicity: 
+    black caucasian      NA's 
+        3        17       110 
+
+drug_treatment: 
+   n    y NA's 
+   2    3  125 
+
+preop_drug_treatment: 
+  n   y 
+127   3 
 
 fu: 
    n NA's 
@@ -122,19 +150,15 @@ irinotecan:
    n NA's 
   31   99 
 
-capecitabine: 
-   n    y NA's 
-  25    6   99 
+cetuximab: 
+   n NA's 
+  31   99 
 
-cpt11: 
+capecitabine: 
    n NA's 
   31   99 
 
 dexamethasone: 
-   n NA's 
-  31   99 
-
-erbitux: 
    n NA's 
   31   99 
 
@@ -178,10 +202,6 @@ raltitrexed:
    n NA's 
   31   99 
 
-xeloda: 
-   n NA's 
-  31   99 
-
 ancillary: 
    n    y NA's 
   30    1   99 
@@ -193,6 +213,10 @@ chemotherapy:
 moltherapy: 
    n    y NA's 
   21   10   99 
+
+uncurated_author_metadata: 
+   Length     Class      Mode 
+      130 character character 
 
 }}
 \keyword{datasets}

@@ -74,9 +74,33 @@ primarysite:
 re 
  6 
 
+summarystage: 
+early  late 
+    3     3 
+
+T: 
+2 3 
+1 5 
+
+N: 
+0 1 2 
+3 2 1 
+
+M: 
+0 
+6 
+
 age_at_initial_pathologic_diagnosis: 
 56 57 72 73 77 
  1  1  1  1  2 
+
+days_to_tumor_recurrence: 
+ 630 3316 NA's 
+   1    1    4 
+
+recurrence_status: 
+norecurrence   recurrence         NA's 
+           3            2            1 
 
 days_to_death: 
  991 1257 1741 NA's 
@@ -87,24 +111,44 @@ deceased   living     NA's
        3        2        1 
 
 msi: 
-   n NA's 
+ MSS NA's 
    5    1 
 
 location: 
-Rectosigmoid Junction                rectum 
-                    4                     2 
+rectosigmoid       rectum 
+           4            2 
+
+summarylocation: 
+l 
+6 
 
 gender: 
 f 
 6 
 
 kras: 
-n y 
+mutant     wt 
+     3      3 
+
+lymphnodesremoved: 
+ 7 14 15 16 
+ 1  2  1  2 
+
+lymphnodesinvaded: 
+0 1 5 
+3 2 1 
+
+stageall: 
+2 3 
 3 3 
 
-mss: 
-   y NA's 
-   5    1 
+ethnicity: 
+caucasian 
+        6 
+
+preop_drug_treatment: 
+n 
+6 
 
 uncurated_author_metadata: 
    Length     Class      Mode 

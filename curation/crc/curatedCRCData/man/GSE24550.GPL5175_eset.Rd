@@ -24,7 +24,7 @@ n]
    platform_shorttitle:     
       Affymetrix HuEx-1_0-st
    platform_summary:     
-      huex-1_0-st
+      huex.1.0.st.v2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -47,7 +47,7 @@ An object of class 'AnnotatedDataFrame'
 \details{
 \preformatted{
 assayData: 282 features, 90 samples
-Platform type: huex-1_0-st
+Platform type: huex.1.0.st.v2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
@@ -61,24 +61,48 @@ adjacentnormal          tumor
             13             77 
 
 summarystage: 
-early  late  NA's 
-   44    33    13 
+late NA's 
+  33   57 
 
-T: 
-   2    3 NA's 
+M: 
+   0 NA's 
+  77   13 
+
+Dstage: 
+   B    C NA's 
   44   33   13 
 
 msi: 
-   n    y NA's 
-  41   24   25 
+ MSI  MSS NA's 
+  14   51   25 
 
-mss: 
- n  y 
-49 41 
+stageall: 
+   2    3 NA's 
+  44   33   13 
+
+dfs_status: 
+deceased_or_recurrence    living_norecurrence                   NA's 
+                    19                     58                     13 
+
+days_to_recurrence_or_death: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  62.05 1007.00 1219.00 1193.00 1449.00 1814.00      13 
 
 batch: 
    Length     Class      Mode 
        90 character character 
+
+drug_treatment: 
+   n    y NA's 
+  44   33   13 
+
+preop_drug_treatment: 
+ n 
+90 
+
+chemotherapy: 
+   n    y NA's 
+  44   33   13 
 
 uncurated_author_metadata: 
    Length     Class      Mode 

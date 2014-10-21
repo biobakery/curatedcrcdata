@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133A
    platform_summary:     
-      hg-u133a
+      hgu133a
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -46,7 +46,7 @@ An object of class 'AnnotatedDataFrame'
 \details{
 \preformatted{
 assayData: 12986 features, 155 samples
-Platform type: hg-u133a
+Platform type: hgu133a
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
@@ -55,21 +55,21 @@ alt_sample_name:
    Length     Class      Mode 
       155 character character 
 
+sample_type: 
+tumor 
+  155 
+
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   21.00   66.50   75.00   72.61   80.50   94.00 
 
 msi: 
-   n    y NA's 
-  99   41   15 
+ MSI  MSS NA's 
+  17  123   15 
 
 gender: 
  f  m 
 69 86 
-
-mss: 
-   n    y NA's 
-  41   99   15 
 
 batch: 
    Length     Class      Mode 

@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133Plus2
    platform_summary:     
-      hg-u133_plus_2
+      hgu133plus2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -45,12 +45,11 @@ An object of class 'AnnotatedDataFrame'
 }}
 \details{
 \preformatted{
-assayData: 19320 features, 238 samples
-Platform type: hg-u133_plus_2
+assayData: 19320 features, 232 samples
+Platform type: hgu133plus2
 Overall survival time-to-event summary (in years):
 Call: survfit(formula = Surv(time, cens) ~ -1)
 
-   6 observations deleted due to missingness 
 records   n.max n.start  events  median 0.95LCL 0.95UCL 
  232.00  232.00  232.00   93.00   11.08    5.57      NA 
 
@@ -60,55 +59,79 @@ Available sample meta-data:
 
 alt_sample_name: 
    Length     Class      Mode 
-      238 character character 
+      232 character character 
+
+sample_type: 
+tumor 
+  232 
 
 summarygrade: 
 high  low NA's 
-  30  183   25 
+  30  183   19 
 
 G: 
    1    2    3 NA's 
-  17  166   30   25 
+  17  166   30   19 
+
+summarystage: 
+early  late  NA's 
+   28   132    72 
+
+N: 
+   0 NA's 
+ 100  132 
+
+M: 
+  0   1 
+176  56 
+
+Dstage: 
+   B    C    D NA's 
+  72   76   56   28 
 
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  23.00   56.00   65.00   64.56   74.00   94.00 
+  23.00   56.00   65.50   64.73   74.00   94.00 
 
 days_to_tumor_recurrence: 
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-    0.0   216.2   906.8  1093.0  1713.0  4276.0       6 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0   216.2   906.8  1093.0  1713.0  4276.0 
 
 recurrence_status: 
 norecurrence   recurrence         NA's 
-         145           55           38 
+         145           55           32 
 
 days_to_death: 
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-  12.82  699.70 1402.00 1423.00 1919.00 4276.00       6 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  12.82  699.70 1402.00 1423.00 1919.00 4276.00 
 
 vital_status: 
-deceased   living     NA's 
-      93      139        6 
+deceased   living 
+      93      139 
 
 gender: 
   f   m 
-114 124 
+110 122 
 
 stageall: 
-   1    2    3    4 NA's 
-  28   72   76   56    6 
+ 1  2  3  4 
+28 72 76 56 
 
 ethnicity: 
     black caucasian  hispanic     other 
-       13       206         2        17 
+       13       201         2        16 
+
+disease_specific_mortality: 
+  n   y 
+162  70 
 
 batch: 
    Length     Class      Mode 
-      238 character character 
+      232 character character 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
-      238 character character 
+      232 character character 
 
 }}
 \keyword{datasets}

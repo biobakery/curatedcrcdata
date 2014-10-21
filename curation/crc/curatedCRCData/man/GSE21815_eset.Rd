@@ -24,7 +24,7 @@ ion)
    platform_shorttitle:     
       Agilent G4112F
    platform_summary:     
-      agilent-014850 whole human genome microarray 4x44k g4112f
+      hgug4112a
    platform_manufacturer:     
       Agilent
    platform_distribution:     
@@ -47,7 +47,7 @@ An object of class 'AnnotatedDataFrame'
 \details{
 \preformatted{
 assayData: 19686 features, 141 samples
-Platform type: agilent-014850 whole human genome microarray 4x44k g4112f
+Platform type: hgug4112a
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
@@ -57,24 +57,36 @@ alt_sample_name:
       141 character character 
 
 sample_type: 
-adjacentnormal          tumor           NA's 
-             5             66             70 
+adjacentnormal          tumor 
+             9            132 
+
+summarygrade: 
+high  low NA's 
+   1   65   75 
+
+G: 
+   1    2    3 NA's 
+  32   33    1   75 
 
 summarystage: 
 early  late  NA's 
-   14    52    75 
+   53    78    10 
 
 T: 
-   1    2    3    4 NA's 
-   4   10   31   21   75 
+   Length     Class      Mode 
+      141 character character 
 
 N: 
-   0    1    2 NA's 
-  43   15    8   75 
+   0    1    2    X NA's 
+  70   34   27    1    9 
 
 M: 
    0    1 NA's 
-  56   10   75 
+ 115   17    9 
+
+Dstage: 
+   A    B    C    D NA's 
+   5   59   49   17   11 
 
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
@@ -85,8 +97,16 @@ gender:
   59   78    4 
 
 stageall: 
-   1    2    3    4 NA's 
-  13   26   17   10   75 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  0.000   2.000   3.000   2.466   3.000   4.000      10 
+
+ethnicity: 
+other 
+  141 
+
+preop_drug_treatment: 
+  n 
+141 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
