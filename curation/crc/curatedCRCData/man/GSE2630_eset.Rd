@@ -55,6 +55,18 @@ alt_sample_name:
    Length     Class      Mode 
        16 character character 
 
+sample_type: 
+tumor 
+   16 
+
+primarysite: 
+co 
+16 
+
+summarystage: 
+early 
+   16 
+
 T: 
  2  3 
  6 10 
@@ -67,6 +79,10 @@ M:
  0 
 16 
 
+Dstage: 
+ B 
+16 
+
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   42.00   59.50   67.00   64.38   72.00   81.00 
@@ -76,12 +92,36 @@ norecurrence   recurrence
           10            6 
 
 summarylocation: 
-   l    r NA's 
-   2    4   10 
+ l  r 
+12  4 
 
 gender: 
  f  m 
  5 11 
+
+stageall: 
+ 1  2 
+ 6 10 
+
+drug_treatment: 
+ n 
+16 
+
+preop_drug_treatment: 
+ n 
+16 
+
+ancillary: 
+ n 
+16 
+
+chemotherapy: 
+ n 
+16 
+
+moltherapy: 
+ n 
+16 
 
 uncurated_author_metadata: 
    Length     Class      Mode 

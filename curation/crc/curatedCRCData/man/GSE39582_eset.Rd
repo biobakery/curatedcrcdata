@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133Plus2
    platform_summary:     
-      hg-u133_plus_2
+      hgu133plus2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -46,7 +46,7 @@ An object of class 'AnnotatedDataFrame'
 \details{
 \preformatted{
 assayData: 19320 features, 566 samples
-Platform type: hg-u133_plus_2
+Platform type: hgu133plus2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
@@ -55,29 +55,85 @@ alt_sample_name:
    Length     Class      Mode 
       566 character character 
 
-T: 
-  0   1   2   3   4 
-  4  33 264 205  60 
+sample_type: 
+tumor 
+  566 
+
+primarysite: 
+ co 
+566 
+
+summarystage: 
+early  late  NA's 
+   37   265   264 
+
+N: 
+   0 NA's 
+ 301  265 
+
+M: 
+  0   1 
+506  60 
+
+Dstage: 
+   B    C    D NA's 
+ 264  205   60   37 
 
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
    22.0    59.0    68.0    66.9    76.0    97.0       1 
 
+msi: 
+ MSI  MSS NA's 
+  75  444   47 
+
 location: 
   distal proximal 
      342      224 
+
+summarylocation: 
+  l   r 
+342 224 
 
 gender: 
   f   m 
 256 310 
 
+kras: 
+mutant     wt   NA's 
+   217    328     21 
+
+braf: 
+mutant     wt   NA's 
+    51    461     54 
+
 stageall: 
-  2 
-566 
+  0   1   2   3   4 
+  4  33 264 205  60 
+
+dfs_status: 
+deceased_or_recurrence    living_norecurrence                   NA's 
+                   177                    380                      9 
+
+days_to_recurrence_or_death: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+      0     420    1290    1461    2250    6030       6 
 
 batch: 
    Length     Class      Mode 
       566 character character 
+
+drug_treatment: 
+   n    y NA's 
+ 316  233   17 
+
+preop_drug_treatment: 
+  n 
+566 
+
+chemotherapy: 
+   n    y NA's 
+ 316  233   17 
 
 uncurated_author_metadata: 
    Length     Class      Mode 

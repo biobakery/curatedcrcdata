@@ -45,7 +45,7 @@ An object of class 'AnnotatedDataFrame'
 }}
 \details{
 \preformatted{
-assayData: 5845 features, 15 samples
+assayData: 5845 features, 29 samples
 Platform type: 11k_vjf-array
 --------------------------- 
 Available sample meta-data: 
@@ -53,27 +53,83 @@ Available sample meta-data:
 
 alt_sample_name: 
    Length     Class      Mode 
-       15 character character 
+       29 character character 
 
 sample_type: 
-adjacentnormal          tumor 
-             6              9 
+adjacentnormal     metastatic          tumor 
+             6             14              9 
+
+primarysite: 
+co 
+29 
+
+summarystage: 
+late 
+  29 
+
+M: 
+ 1 
+29 
+
+Dstage: 
+ D 
+29 
 
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  49.00   60.50   65.00   64.27   68.00   71.00 
+  48.00   60.00   62.00   61.31   68.00   71.00 
+
+summarylocation: 
+ l 
+29 
 
 gender: 
-f m 
-7 8 
+ f  m 
+11 18 
 
 stageall: 
  4 
-15 
+29 
+
+drug_name: 
+FOLFIRI 
+     29 
+
+drug_treatment: 
+ y 
+29 
+
+drug_response: 
+ n  y 
+15 14 
+
+preop_drug_treatment: 
+ n 
+29 
+
+fu: 
+ y 
+29 
+
+irinotecan: 
+ y 
+29 
+
+folfiri: 
+ y 
+29 
+
+leucovorin: 
+ y 
+29 
+
+chemotherapy: 
+ y 
+29 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
-       15 character character 
+       29 character character 
 
 }}
 \keyword{datasets}

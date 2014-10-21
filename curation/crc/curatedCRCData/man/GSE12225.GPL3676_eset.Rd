@@ -45,7 +45,7 @@ An object of class 'AnnotatedDataFrame'
 }}
 \details{
 \preformatted{
-assayData: 19727 features, 79 samples
+assayData: 19727 features, 42 samples
 Platform type: nki-cmf homo sapiens 35k oligo array
 --------------------------- 
 Available sample meta-data: 
@@ -53,23 +53,51 @@ Available sample meta-data:
 
 alt_sample_name: 
    Length     Class      Mode 
-       79 character character 
+       42 character character 
 
 sample_type: 
 tumor 
-   79 
+   42 
+
+primarysite: 
+re 
+42 
+
+summarystage: 
+early  late 
+   30    12 
 
 T: 
-   0    1    2    3 NA's 
-  21   21   29    1    7 
+ 1  2  3 
+14 27  1 
 
 N: 
- 0  1  2  3 
-67  6  4  2 
+ 0  1  2 
+30  6  6 
+
+M: 
+ 0 
+42 
+
+location: 
+rectum 
+    42 
+
+summarylocation: 
+ l 
+42 
+
+stageall: 
+ 1  3 
+29 13 
+
+preop_drug_treatment: 
+ n 
+42 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
-       79 character character 
+       42 character character 
 
 }}
 \keyword{datasets}

@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133Plus2
    platform_summary:     
-      hg-u133_plus_2
+      hgu133plus2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -45,63 +45,75 @@ An object of class 'AnnotatedDataFrame'
 }}
 \details{
 \preformatted{
-assayData: 19320 features, 428 samples
-Platform type: hg-u133_plus_2
+assayData: 19320 features, 427 samples
+Platform type: hgu133plus2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
 
 alt_sample_name: 
    Length     Class      Mode 
-      428 character character 
+      427 character character 
+
+sample_type: 
+tumor 
+  427 
+
+primarysite: 
+ co  re 
+343  84 
 
 summarygrade: 
 high  low NA's 
-  75  270   83 
+  75  270   82 
 
 G: 
    1    2    3    4 NA's 
-  10  260   71    4   83 
+  10  260   71    4   82 
 
 summarystage: 
 early  late  NA's 
-  166   168    94 
+  166   177    84 
 
 T: 
-   1    2    3    4 NA's 
-  14   55  244   31   84 
+   Length     Class      Mode 
+      427 character character 
 
 N: 
-   0    1    2 NA's 
- 187  101   59   81 
+   0    1    2    X NA's 
+ 187  101   59    3   77 
 
 M: 
-   0    1 NA's 
- 274   64   90 
+   0    1    X NA's 
+ 274   64    9   80 
 
-family_history: 
-   n    y NA's 
- 184  241    3 
+Dstage: 
+   A    B    C    D NA's 
+  51  113  105    5  153 
+
+age_at_initial_pathologic_diagnosis: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  25.00   55.00   65.00   65.68   75.00   95.00 
 
 gender: 
    f    m NA's 
- 208  219    1 
+ 207  219    1 
 
 stageall: 
-   1    2    3    4 NA's 
-  52  114  104   64   94 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  0.000   2.000   2.000   2.516   3.000   4.000      90 
 
 ethnicity: 
-other 
-  428 
+    black caucasian  hispanic     other 
+       23       391         1        12 
 
 batch: 
    Length     Class      Mode 
-      428 character character 
+      427 character character 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
-      428 character character 
+      427 character character 
 
 }}
 \keyword{datasets}
