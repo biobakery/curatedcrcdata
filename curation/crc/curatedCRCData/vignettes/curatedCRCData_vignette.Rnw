@@ -23,6 +23,7 @@ BiocStyle::latex()
 <<preliminaries,echo=FALSE,results=hide>>=
 library(sva)
 library(xtable)
+library(affy)
 @ 
 
 \section{curatedCRCData: Clinically Annotated Data for the colorectal Cancer
