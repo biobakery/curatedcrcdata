@@ -17,7 +17,8 @@ if(length(xx) > 0) {
 genes<-do.call(rbind.data.frame,xx)
 genes <- unique(genes) #keep unique rows
 genemap <- data.frame(probeset=rownames(genes),hgnc=genes)
-fname <- paste("gpl-5175.csv",sep="")
+colnames(genemap)<-c("probeset","hgnc")
+fname <- "gpl-5175.csv"
 write.csv(genemap,paste("../GENEMAPS/",fname,sep=""),row.names=FALSE,quote=FALSE)
 
 
