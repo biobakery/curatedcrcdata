@@ -20,6 +20,8 @@ $REXEC CMD BATCH --vanilla $SRCHOME/getPlatforms.R $LOG/getPlatforms.log
 
 #Do the mapping.
 $REXEC CMD BATCH --vanilla gpl5175.R $LOG/gpl5175.log
+$REXEC CMD BATCH --vanilla gpl2006.R $LOG/gpl2006.log
+$REXEC CMD BATCH --vanilla gpl2829.R $LOG/gpl2829.log
 ./crcgenemapper.sh
 $REXEC CMD BATCH --vanilla $SRCHOME/collapseRows.R $LOG/collapseRows.log
 
