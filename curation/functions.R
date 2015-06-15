@@ -99,3 +99,23 @@ getVal <- function(x,string){
   if(length(output)==0) output <- NA
   return(output)
 }
+#######Updating dfs_status
+updatedfs<-function(curatedset){
+  for(i in 1:length(curatedset$dfs_status)){
+    if(is.na(curatedset$dfs_status[i]) && !is.na(curatedset$recurrence_status[i]) && (!is.na(curatedset$vital_status[i]))){
+      if(curatedset$recurrence_status[i] %in% "recurrence" || curatedset$vital_status[i] %in% "death"){
+        curatedset$dfs_status[i]="deceased_or_recurrence"
+      }
+      if(curatedset$recurrence_status[i] %in% "norecurrence" & curatedset$vital_status[i] == "living"){
+        curatedset$dfs_curated[i]="living_norecurrence"
+      }
+    }
+    if(curatedset$dfs_status[i] %in% 'deceased_or_recurrence' & is.na(curatedset$days_to_recurrence_or_death[i])){
+      curatedset$days_to_recurrence_or_death[i]=curatedset$days_to_tumor_recurrence[i]
+    }
+    if(curatedset$dfs_status[i] %in% 'living_norecurrence' & is.na(curatedset$days_to_recurrence_or_death[i])){
+      curatedset$days_to_recurrence_or_death[i]=curatedset$days_to_death[i]
+    }
+  }
+  return(curatedset)
+}
