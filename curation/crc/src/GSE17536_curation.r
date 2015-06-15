@@ -137,6 +137,8 @@ tmp <- tmp * 30  #months to days
 curated$days_to_tumor_recurrence <- tmp
 
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
+
 write.table(curated, row.names=FALSE, file="../curated/GSE17536_curated_pdata.txt",sep="\t")
 
 

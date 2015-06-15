@@ -33,8 +33,8 @@ tmp[tmp=="microsatellite instability (msi) status: Unknown"]<-NA
 tmp[tmp=="microsatellite instability (msi) status: High [MSI-H]"]<-"MSI"
 tmp[tmp=="microsatellite instability (msi) status: Low [MSI-L]"]<-"MSS"
 curated$msi<-tmp
-
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 
 write.table(curated, row.names=FALSE, file="../curated/GSE26682-GPL96_curated_pdata.txt",sep="\t")
 

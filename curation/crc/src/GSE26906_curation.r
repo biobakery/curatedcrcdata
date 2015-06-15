@@ -88,4 +88,5 @@ curated$preop_drug_treatment <-"n"
 curated$chemotherapy<-"n"
 
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 write.table(curated, row.names=FALSE, file="../curated/GSE26906_curated_pdata.txt",sep="\t")

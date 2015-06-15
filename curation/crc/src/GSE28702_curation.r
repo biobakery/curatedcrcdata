@@ -115,7 +115,9 @@ curated$platin<-"y"
 ##chemotherapy  
 curated$chemotherapy<-"y"  
 
+
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 
 write.table(curated, row.names=FALSE, file="../curated/GSE28702_curated_pdata.txt",sep="\t")
 ##Location = Peritoneum?

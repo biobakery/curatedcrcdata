@@ -139,5 +139,7 @@ curated$drug_treatment<-tmp
 
 curated <- postProcess(curated, uncurated)
 
+curated<-updatedfs(curated)
+
 write.table(curated, row.names=FALSE, file="../curated/GSE39582_curated_pdata.txt",sep="\t")
 

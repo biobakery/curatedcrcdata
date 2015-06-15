@@ -129,6 +129,7 @@ tmp[tmp=="N"] <- "n"
 tmp[tmp=="Y"] <- "y"
 tmp[286]<-NA
 curated$chemotherapy <- tmp
-
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
+
 write.table(curated, row.names=FALSE, file="../curated/GSE14333_curated_pdata.txt",sep="\t")

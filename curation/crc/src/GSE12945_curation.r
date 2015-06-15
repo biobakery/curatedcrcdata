@@ -88,6 +88,7 @@ tmp <- uncurated$characteristics_ch1.4
 tmp <- sub("Rezidiv: ","",tmp,fixed=TRUE)
 tmp[tmp=="0"] <- "norecurrence"
 tmp[tmp=="1"] <- "recurrence"
+tmp[tmp=="NA"]<-NA
 curated$recurrence_status <- tmp
 
 #dfs_status
@@ -192,6 +193,7 @@ tmp[tmp=="Rectum"]<-"re"
 curated$primarysite<-tmp
 
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 write.table(curated, row.names=FALSE, file="../curated/GSE12945_curated_pdata.txt",sep="\t")
 
 ##Questions:

@@ -125,5 +125,8 @@ tmp[tmp=="death"] <- "y"
 curated$disease_specific_mortality <- tmp
 
 curated <- postProcess(curated, uncurated)
+
+curated<-updatedfs(curated)
+
 write.table(curated, row.names=FALSE, file="../curated/GSE17538-GPL570_curated_pdata.txt",sep="\t")
 

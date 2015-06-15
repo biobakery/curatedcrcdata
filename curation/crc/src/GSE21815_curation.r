@@ -138,7 +138,8 @@ tmp[tmp=="1"]<-"low"
 tmp[tmp=="2"]<-"low"
 tmp[tmp=="3"]<-"high"
 curated$summarygrade <-tmp
-
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
+
 write.table(curated, row.names=FALSE, file="../curated/GSE21815_curated_pdata.txt",sep="\t")
 
