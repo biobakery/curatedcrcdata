@@ -67,6 +67,8 @@ tmp[95]<-tmp[5]
 tmp[96]<-tmp[25]
 curated$days_to_recurrence_or_death<-tmp
 
+
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 
 write.table(curated, row.names=FALSE, file="../curated/GSE33113_curated_pdata.txt",sep="\t")

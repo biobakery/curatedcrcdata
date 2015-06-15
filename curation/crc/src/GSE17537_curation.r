@@ -134,8 +134,9 @@ curated$days_to_tumor_recurrence <- tmp
 
 ##primarysite
 curated$primarysite <- "co"
-
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
+
 write.table(curated, row.names=FALSE, file="../curated/GSE17537_curated_pdata.txt",sep="\t")
 
 ##Not sure if these apply to this dataset (paper was unclear). Seems from the GEO description that at least primarysite = colon

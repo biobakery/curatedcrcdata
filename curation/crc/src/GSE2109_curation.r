@@ -136,8 +136,8 @@ tmp <- apply(uncurated,1,getVal,string="Pathological M:")
 tmp <- sub("Pathological M: ","",tmp,fixed=TRUE)
 curated$M <- tmp
 
-
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 
 write.table(curated, row.names=FALSE, file="../curated/GSE2109_curated_pdata.txt",sep="\t")
 
