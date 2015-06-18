@@ -38,14 +38,14 @@ Experiment data
 Preprocessing: default
 featureData(eset):
 An object of class 'AnnotatedDataFrame'
-  featureNames: 1 10 ... 9 (48 total)
+  featureNames: A1BG-AS1 A1CF ... ZZZ3 (12982 total)
   varLabels: probeset gene
   varMetadata: labelDescription
 
 }}
 \details{
 \preformatted{
-assayData: 48 features, 16 samples
+assayData: 12982 features, 16 samples
 Platform type: human 19k oligo array
 --------------------------- 
 Available sample meta-data: 

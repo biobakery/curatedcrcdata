@@ -38,14 +38,15 @@ Experiment data
 Preprocessing: default
 featureData(eset):
 An object of class 'AnnotatedDataFrame'
-  featureNames: A1BG A1CF ... ZZZ3 (19727 total)
+  featureNames: 15E1.2///TRIAP1///SFRS9///DYNLL1///COX6A1
+    1810006K21Rik///C11orf10 ... ZZZ3 (17015 total)
   varLabels: probeset gene
   varMetadata: labelDescription
 
 }}
 \details{
 \preformatted{
-assayData: 19727 features, 42 samples
+assayData: 17015 features, 42 samples
 Platform type: nki-cmf homo sapiens 35k oligo array
 --------------------------- 
 Available sample meta-data: 
