@@ -246,3 +246,4 @@ curated$moltherapy<-sapply(tmp.therapy, function(x) ifelse(length(grep("Targeted
                                                   ifelse(is.na(x), NA, "n")))
 
 curated <- postProcess(curated, uncurated, do.celfile.batch=FALSE)
+curated<-updatedfs(curated)
