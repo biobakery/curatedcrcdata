@@ -53,6 +53,8 @@ curated$recurrence_status<- recur
 ##days_to_tumor_recurrence  
 curated$days_to_tumor_recurrence<-uncurated$days_to_new_tumor_event_after_initial_treatment
 
+
+
 ##MSI
 tmp<-uncurated$microsatellite_instability
 tmp[tmp=="YES"]<-"MSI"
@@ -251,3 +253,4 @@ curated$moltherapy<-sapply(tmp.therapy, function(x) ifelse(length(grep("Targeted
                                                   ifelse(is.na(x), NA, "n")))
 
 curated <- postProcess(curated, uncurated, do.celfile.batch=FALSE)
+
