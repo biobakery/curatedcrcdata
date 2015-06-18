@@ -107,7 +107,7 @@ updatedfs<-function(curatedset){
         curatedset$dfs_status[i]="deceased_or_recurrence"
       }
       if(curatedset$recurrence_status[i] %in% "norecurrence" & curatedset$vital_status[i] == "living"){
-        curatedset$dfs_curated[i]="living_norecurrence"
+        curatedset$dfs_status[i]="living_norecurrence"
       }
     }
     if(curatedset$dfs_status[i] %in% 'deceased_or_recurrence' & is.na(curatedset$days_to_recurrence_or_death[i])){

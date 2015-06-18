@@ -125,6 +125,14 @@ ethnicity:
     black caucasian  hispanic     other 
         9       151         1        16 
 
+dfs_status: 
+deceased_or_recurrence    living_norecurrence                   NA's 
+                    36                     91                     50 
+
+days_to_recurrence_or_death: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   27.6   751.3  1380.0  1519.0  2122.0  4276.0      50 
+
 disease_specific_mortality: 
   n   y 
 122  55 

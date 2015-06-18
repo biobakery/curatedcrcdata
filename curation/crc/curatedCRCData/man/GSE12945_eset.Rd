@@ -139,7 +139,7 @@ deceased_or_recurrence    living_norecurrence                   NA's
 
 days_to_recurrence_or_death: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-     90    1125    1470    1355    1620    1920      11 
+     90    1110    1440    1333    1620    1920      10 
 
 batch: 
    Length     Class      Mode 

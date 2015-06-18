@@ -45,7 +45,7 @@ An object of class 'AnnotatedDataFrame'
 }}
 \details{
 \preformatted{
-assayData: 11838 features, 176 samples
+assayData: 11838 features, 156 samples
 Platform type: hgu133plus2
 --------------------------- 
 Available sample meta-data: 
@@ -53,31 +53,31 @@ Available sample meta-data:
 
 alt_sample_name: 
    Length     Class      Mode 
-      176 character character 
+      156 character character 
 
 sample_type: 
 tumor 
-  176 
+  156 
 
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  45.00   66.00   73.00   71.75   78.00   92.00 
+  45.00   65.75   73.00   71.50   78.00   92.00 
 
 msi: 
  MSI  MSS NA's 
-  18  142   16 
+  15  128   13 
 
 gender: 
  f  m 
-83 93 
+75 81 
 
 batch: 
    Length     Class      Mode 
-      176 character character 
+      156 character character 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
-      176 character character 
+      156 character character 
 
 }}
 \keyword{datasets}

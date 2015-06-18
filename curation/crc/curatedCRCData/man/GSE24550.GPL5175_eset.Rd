@@ -39,14 +39,14 @@ n]
 Preprocessing: default
 featureData(eset):
 An object of class 'AnnotatedDataFrame'
-  featureNames: ABCF1 ANAPC5 ... ZNF259P1///ZNF259 (282 total)
+  featureNames: A1CF A2ML1 ... ZYX (10015 total)
   varLabels: probeset gene
   varMetadata: labelDescription
 
 }}
 \details{
 \preformatted{
-assayData: 282 features, 90 samples
+assayData: 10015 features, 90 samples
 Platform type: huex.1.0.st.v2
 --------------------------- 
 Available sample meta-data: 

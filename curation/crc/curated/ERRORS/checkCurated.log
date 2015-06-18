@@ -298,4 +298,4 @@ TCGA-RNASeqV2-READ_curated_pdata.txt         TRUE                  TRUE
 > 
 > proc.time()
    user  system elapsed 
-  3.111   0.037   3.146 
+  3.169   0.045   3.227 
