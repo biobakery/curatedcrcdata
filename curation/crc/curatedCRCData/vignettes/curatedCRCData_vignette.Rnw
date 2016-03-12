@@ -15,6 +15,7 @@ BiocStyle::latex()
 \author{Princy Parsana, Markus Riester, Curtis Huttenhower, Levi Waldron}
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 \date{2013}
 
 \maketitle
