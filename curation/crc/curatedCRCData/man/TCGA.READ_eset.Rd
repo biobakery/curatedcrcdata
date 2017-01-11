@@ -74,9 +74,33 @@ primarysite:
   re NA's 
   50    1 
 
+summarystage: 
+early  late 
+   30    21 
+
+T: 
+ 1  2  3  4 
+ 3  9 37  2 
+
+N: 
+ 0  1  2 
+30 11 10 
+
+M: 
+ 0  1 
+43  8 
+
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   41.00   62.00   67.00   67.67   73.50   89.00 
+
+days_to_tumor_recurrence: 
+ 301  327 NA's 
+   1    1   49 
+
+recurrence_status: 
+norecurrence   recurrence         NA's 
+           3            2           46 
 
 days_to_death: 
  316 NA's 
@@ -87,28 +111,48 @@ deceased   living     NA's
        1        4       46 
 
 msi: 
-   n NA's 
+ MSS NA's 
    1   50 
 
 location: 
-Rectosigmoid Junction                rectum                  NA's 
-                    3                    47                     1 
+rectosigmoid       rectum         NA's 
+           3           47            1 
+
+summarylocation: 
+   l NA's 
+  50    1 
 
 gender: 
  f  m 
 24 27 
 
 kras: 
-   n    y NA's 
-   2    2   47 
+mutant     wt   NA's 
+     2      2     47 
 
-mss: 
+lymphnodesremoved: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  12.00   17.00   22.00   24.73   32.00   65.00 
+
+lymphnodesinvaded: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   0.000   0.000   2.608   3.000  31.000 
+
+stageall: 
+   1    2    3    4 NA's 
+  12   18   13    7    1 
+
+ethnicity: 
+    black caucasian      NA's 
+        1         4        46 
+
+drug_treatment: 
    y NA's 
-   1   50 
+   2   49 
 
-uncurated_author_metadata: 
-   Length     Class      Mode 
-       51 character character 
+preop_drug_treatment: 
+ n 
+51 
 
 fu: 
    n NA's 
@@ -122,19 +166,15 @@ irinotecan:
    n NA's 
   16   35 
 
-capecitabine: 
-   n    y NA's 
-  15    1   35 
+cetuximab: 
+   n NA's 
+  16   35 
 
-cpt11: 
+capecitabine: 
    n NA's 
   16   35 
 
 dexamethasone: 
-   n NA's 
-  16   35 
-
-erbitux: 
    n NA's 
   16   35 
 
@@ -178,10 +218,6 @@ raltitrexed:
    n NA's 
   16   35 
 
-xeloda: 
-   n NA's 
-  16   35 
-
 ancillary: 
    n NA's 
   17   34 
@@ -193,6 +229,10 @@ chemotherapy:
 moltherapy: 
    n    y NA's 
   15    2   34 
+
+uncurated_author_metadata: 
+   Length     Class      Mode 
+       51 character character 
 
 }}
 \keyword{datasets}

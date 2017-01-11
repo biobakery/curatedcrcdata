@@ -4,7 +4,9 @@
 \title{Clinically Annotated Data for the CRC Cancer Transcriptome}
 \description{The curatedCRCData package provides manually curated
   clinical data, uniformly processed expression data, and convenience
-  functions for gene expression analysis in patients with colorectal cancer.}
+  functions for gene expression analysis in patients with colorectal cancer.
+  
+  Note: For staging, the "summarystage" was curated as using information on the pathologic T, N, and M stages, such that "early" = T stage of Tis through T3 and N0 and M0 and "late" = T stage of 4 and/or any N > 0 or M > 0}
 \details{
 \tabular{ll}{
 Package: \tab curatedCRCData\cr
@@ -20,7 +22,7 @@ Princy Parsana, Markus Riester, Levi Waldron
 
 Department of Biostatistics and Computational Biology, Dana-Farber Cancer Institute, Harvard School of Public Health
 
-Maintainer: Levi Waldron <levi@jimmy.harvard.edu>
+Maintainer: Princy Parsana <princyparsana@jhu.edu>
 }
 
 \examples{

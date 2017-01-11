@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133Plus2
    platform_summary:     
-      hg-u133_plus_2
+      hgu133plus2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -46,7 +46,7 @@ An object of class 'AnnotatedDataFrame'
 \details{
 \preformatted{
 assayData: 19320 features, 96 samples
-Platform type: hg-u133_plus_2
+Platform type: hgu133plus2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
@@ -59,17 +59,29 @@ sample_type:
 adjacentnormal          tumor 
              6             90 
 
+N: 
+   0 NA's 
+  90    6 
+
+M: 
+   0 NA's 
+  90    6 
+
+Dstage: 
+   B NA's 
+  90    6 
+
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-  35.00   60.00   72.50   69.73   79.00   95.00       2 
+  35.00   60.25   73.50   70.02   79.00   95.00       2 
 
 gender: 
    f    m NA's 
-  50   44    2 
+  49   45    2 
 
 stageall: 
- 2 
-96 
+   2 NA's 
+  90    6 
 
 days_to_recurrence_or_death: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 

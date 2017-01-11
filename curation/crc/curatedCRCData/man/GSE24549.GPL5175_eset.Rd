@@ -24,7 +24,7 @@ n]
    platform_shorttitle:     
       Affymetrix HuEx-1_0-st
    platform_summary:     
-      huex-1_0-st
+      huex.1.0.st.v2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -39,15 +39,15 @@ n]
 Preprocessing: default
 featureData(eset):
 An object of class 'AnnotatedDataFrame'
-  featureNames: ABCF1 ANAPC5 ... ZNF259P1///ZNF259 (282 total)
+  featureNames: A1CF A2ML1 ... ZYX (10015 total)
   varLabels: probeset gene
   varMetadata: labelDescription
 
 }}
 \details{
 \preformatted{
-assayData: 282 features, 83 samples
-Platform type: huex-1_0-st
+assayData: 10015 features, 83 samples
+Platform type: huex.1.0.st.v2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
@@ -56,25 +56,53 @@ alt_sample_name:
    Length     Class      Mode 
        83 character character 
 
-summarystage: 
-early  late 
-   46    37 
+sample_type: 
+tumor 
+   83 
 
-T: 
- 2  3 
+summarystage: 
+late NA's 
+  37   46 
+
+M: 
+ 0 
+83 
+
+Dstage: 
+ B  C 
 46 37 
 
 msi: 
-   n    y NA's 
-  69   13    1 
+ MSI  MSS NA's 
+   7   75    1 
 
-mss: 
- n  y 
-14 69 
+stageall: 
+ 2  3 
+46 37 
+
+dfs_status: 
+deceased_or_recurrence    living_norecurrence 
+                    43                     40 
+
+days_to_recurrence_or_death: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  120.4   441.6  2394.0  2113.0  3650.0  3650.0 
 
 batch: 
    Length     Class      Mode 
        83 character character 
+
+drug_treatment: 
+ n 
+83 
+
+preop_drug_treatment: 
+ n 
+83 
+
+chemotherapy: 
+ n  y 
+46 37 
 
 uncurated_author_metadata: 
    Length     Class      Mode 

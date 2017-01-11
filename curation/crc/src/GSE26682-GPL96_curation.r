@@ -1,3 +1,4 @@
+
 rm(list=ls())
 
 source("../../functions.R")
@@ -9,6 +10,9 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.
 
 ##title -> alt_sample_name
 curated$alt_sample_name <- uncurated$title
+
+##sample_type
+curated$sample_type <-"tumor"
 
 ##age
 tmp<-apply(uncurated,1,getVal,string="age: ")
@@ -24,21 +28,13 @@ curated$gender<-tmp
 
 ##MSI_status
 tmp<-apply(uncurated,1,getVal,string="microsatellite instability (msi) status: ")
-tmp[tmp=="microsatellite instability (msi) status: Stable [MSS]"]<-"n"
+tmp[tmp=="microsatellite instability (msi) status: Stable [MSS]"]<-"MSS"
 tmp[tmp=="microsatellite instability (msi) status: Unknown"]<-NA
-tmp[tmp=="microsatellite instability (msi) status: High [MSI-H]"]<-"y"
-tmp[tmp=="microsatellite instability (msi) status: Low [MSI-L]"]<-"y"
+tmp[tmp=="microsatellite instability (msi) status: High [MSI-H]"]<-"MSI"
+tmp[tmp=="microsatellite instability (msi) status: Low [MSI-L]"]<-"MSS"
 curated$msi<-tmp
-
-##MSS_status
-tmp<-apply(uncurated,1,getVal,string="microsatellite instability (msi) status: ")
-tmp[tmp=="microsatellite instability (msi) status: Stable [MSS]"]<-"y"
-tmp[tmp=="microsatellite instability (msi) status: Unknown"]<-NA
-tmp[tmp=="microsatellite instability (msi) status: High [MSI-H]"]<-"n"
-tmp[tmp=="microsatellite instability (msi) status: Low [MSI-L]"]<-"n"
-curated$mss<-tmp
-
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 
 write.table(curated, row.names=FALSE, file="../curated/GSE26682-GPL96_curated_pdata.txt",sep="\t")
 

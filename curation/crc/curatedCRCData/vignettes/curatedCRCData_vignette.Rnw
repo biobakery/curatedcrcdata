@@ -15,6 +15,7 @@ BiocStyle::latex()
 \author{Princy Parsana, Markus Riester, Curtis Huttenhower, Levi Waldron}
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 \date{2013}
 
 \maketitle
@@ -23,6 +24,7 @@ BiocStyle::latex()
 <<preliminaries,echo=FALSE,results=hide>>=
 library(sva)
 library(xtable)
+library(affy)
 @ 
 
 \section{curatedCRCData: Clinically Annotated Data for the colorectal Cancer
@@ -194,7 +196,7 @@ write.table(summary.table, file=myfile, row.names=FALSE, quote=TRUE, sep=",")
 
 <<xtable, echo=FALSE, results=tex>>=
 library(xtable)
-print(xtable(summary.table[, c(2, 3, 4, 5, 7)], 
+print(xtable(summary.table, 
              caption="Datasets provided by curatedCRCData.",
              table.placement="p", caption.placement="bottom"),
       floating.environment='sidewaystable')
