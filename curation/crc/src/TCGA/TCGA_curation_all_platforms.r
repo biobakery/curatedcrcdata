@@ -68,8 +68,8 @@ curated$gender<-tmp
 
 ##kras
 tmp<-uncurated$kras_mutation_found
-tmp[tmp=="YES"]<-"y"
-tmp[tmp=="NO"]<-"n"
+tmp[tmp=="YES"]<-"mutant"
+tmp[tmp=="NO"]<-"wt"
 curated$kras<-tmp
 
 curated$braf<-NA

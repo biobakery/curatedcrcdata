@@ -16,18 +16,27 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.
 ##M
 ##mutation_apc
 
-
 #alt_sample_name
 tmp <- uncurated$title
 curated$alt_sample_name <-tmp
 
-#T  are all "II"
-curated$T <- "2"
+##sample_type
+curated$sample_type <-"tumor"
 
-curated$sample_type <- "tumor"
+##primarysite
+curated$primarysite<-"co"
 
-##summarystage
-curated$summarystage <- "early"
+#stageall 
+curated$stageall <- "2"
+
+#N
+curated$N <-0
+
+#M
+curated$M <-0
+
+#Dstage
+curated$Dstage <-"B"
 
 #age
 tmp <- uncurated$characteristics_ch1.1
@@ -48,16 +57,17 @@ tmp[tmp=="Right"] <- "r"
 tmp[tmp=="Left"] <- "l"
 curated$summarylocation <- tmp
 
-##M
+##recurrence_status
 tmp <- uncurated$characteristics_ch1.4
 tmp <- sub("metastasis: ","",tmp,fixed=TRUE)
-tmp[tmp=="LIVER"] <- "1"
-tmp[tmp=="LUNG"] <- "1"
-tmp[tmp=="LIVER/BONE"] <- "1"
-tmp[tmp=="CNS"] <- "1"
-tmp[tmp=="BONE"] <- "1"
-tmp[tmp=="LIVER/LUNG"] <- "1"
-curated$M <- tmp
+tmp[tmp=="LIVER"] <- "recurrence"
+tmp[tmp=="LUNG"] <- "recurrence"
+tmp[tmp=="LIVER/BONE"] <- "recurrence"
+tmp[tmp=="CNS"] <- "recurrence"
+tmp[tmp=="BONE"] <- "recurrence"
+tmp[tmp=="LIVER/LUNG"] <- "recurrence"
+tmp[tmp==0]<-"norecurrence"
+curated$recurrence_status <- tmp
 
 #mutation_apc
 tmp <- uncurated$characteristics_ch1.5
@@ -65,5 +75,18 @@ tmp[tmp=="first apc mutation: 0"] <- "0"
 tmp <- ifelse(tmp =="0","n","y")
 curated$mutation_apc <- tmp
 
+#msi
+curated$msi <- "MSS"
+
+#drug_treatment
+curated$drug_treatment <-"n"
+
+##preop_drug_treatment
+curated$preop_drug_treatment <-"n"
+
+##chemotherapy
+curated$chemotherapy<-"n"
+
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
 write.table(curated, row.names=FALSE, file="../curated/GSE26906_curated_pdata.txt",sep="\t")

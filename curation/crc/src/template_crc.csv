@@ -2,50 +2,49 @@ col.name,var.class,uniqueness,requiredness,allowedvalues,description
 sample_name,character,uniqueness,required,*,primary sample identifier
 unique_patient_ID,character,uniqueness,optional,*,Use this column if there are technical replicates. If this column contains non-unique entries  expression values of those arrays will eventually be averaged
 alt_sample_name,character,uniqueness,optional,*,"if another identifier is used, for example in supplemental tables"
-sample_type,character,non-unique,optional,tumor|metastatic|healthy|adjacentnormal,"""healthy"" should be only from individuals without cancer, ""metastatic"" for non-primary tumors"
+sample_type,character,non-unique,optional,tumor|metastatic|healthy|adjacentnormal,"""healthy"" should be only from individuals entirely without cancer, ""adjacentnormal"" from individuals with cancer, ""metastatic"" for non-primary tumors"
 primarysite,character,non-unique,optional,co|re,co = colon; re= rectum
 summarygrade,character,non-unique,optional,low|high,"low = 1,2; high = 3,4"
-G,character,non-unique,optional,1|2|3|4,"G(1-4): If multiple given, ie 12, 23, use highest given"
-summarystage,character,non-unique,optional,early|late,"early = 1,2; late = 3,4"
-T,character,non-unique,optional,0|1|2|3|4,"T(1-4): If multiple given, ie 12, 23, use highest given"
-N,character,non-unique,optional,[0-3],N (0/1): degree of spread to regional lymph nodes
-M,character,non-unique,optional,[01],M (0/1): presence of metastasis
-age_at_initial_pathologic_diagnosis,integer,non-unique,optional,[1-9][0-9],in years
+G,character,non-unique,optional,1|2|3|4,"G(1-4): If multiple given, ie 12, 23, use highest given. (1=well-differentiated, 2=moderately differentiated, 3=poorly differentiated, 4=undifferentiated)"
+summarystage,character,non-unique,optional,early|late,early = T stage of Tis through T3 and N0 and M0; late = T stage of 4 or any N>0 or M>0
+T,character,non-unique,optional,0|X|is|1|2|3|4,"Pathologic T stage: If multiple given, ie 12, 23, use highest given"
+N,character,non-unique,optional,0|1|2|X,N stage: degree of spread to regional lymph nodes
+M,character,non-unique,optional,0|1|X,M stage: presence of metastasis
+Dstage,character,non-unique,optional,A|B|C|D,Dukes' classification stage
+age_at_initial_pathologic_diagnosis,integer,non-unique,optional,[1-9][0-9],Age (in yrs) at time the current pathologic sample was taken
 days_to_tumor_recurrence,integer,non-unique,optional,decimal,time to recurrence or last follow-up in days
 recurrence_status,character,non-unique,optional,recurrence|norecurrence,recurrence censoring variable
 days_to_death,integer,non-unique,optional,decimal,time to death or last follow-up in days
 vital_status,character,non-unique,optional,living|deceased,Overall survival censoring variable
-os_binary,character,non-unique,optional,short|long,"dichotomized overall survival variable (short, long)"
-relapse_binary,character,non-unique,optional,short|long,"dichotomized relapse variable (short, long)"
 family_history,character,non-unique,optional,[yn],family history of colorectal cancer
-msi,character,non-unique,optional,[yn],microsatellite phenotype: (microsatellite instability) 
-location,character,non-unique,optional,ascending|transverse|descending|rectum|caecum|sigmoid|rectosigmoid|hepaticflexure|splenicflexure|flexureright|co|proximal|distal|Rectosigmoid Junction,detailed location
+msi,character,non-unique,optional,MSI|MSS,"microsatellite status (MSI-low is counted as MSS, and MSI-high is counted as MSI)"
+location,character,non-unique,optional,ascending|transverse|descending|rectum|caecum|sigmoid|rectosigmoid|hepaticflexure|splenicflexure|co|proximal|distal,detailed location sample was taken from
 summarylocation,character,non-unique,optional,[lr],left or right
 gender,character,non-unique,optional,[mf],male or female
-kras,character,non-unique,optional,[yn],genome/variation: (wild type KRAS)
-braf,character,non-unique,optional,[yn],braf mutation
-line1,character,non-unique,optional,[yn],line-1 hypomethylation
-tumor_size,integer,non-unique,optional,[1-10],centimeters
-mss,character,non-unique,optional,[yn],microsatellite phenotype: (microsatellite stability) 
+kras,character,non-unique,optional,mutant|wt,KRAS mutation status
+braf,character,non-unique,optional,mutant|wt,BRAF mutation status
+line1,character,non-unique,optional,[yn],LINE-1 hypomethylation status (y= hypomethylated)
+tumor_size,numeric,non-unique,optional,[0-9][\.]?[0-9]?,centimeters
 mutation_apc,character,non-unique,optional,[yn],any APC mutation
-lymphnodesremoved,integer,non-unique,optional,[1-9][0-9],"why is this an integer 10-99, and what does it mean?"
-lymphnodesinvaded,integer,non-unique,optional,[1-9][0-9],"why is this an integer 10-99, and what does it mean?"
-stageall,character,non-unique,optional,1|2|3|4,ajcc or uicc
+lymphnodesremoved,integer,non-unique,optional,[0-9][0-9]*,"why is this an integer 10-99, and what does it mean?"
+lymphnodesinvaded,integer,non-unique,optional,[0-9][0-9]?,"why is this an integer 10-99, and what does it mean?"
+stageall,character,non-unique,optional,0|1|2|3|4,ajcc or uicc stage
 ethnicity,character,non-unique,optional,caucasian|black|hispanic|other,ethnic background
 dfs_status,character,non-unique,optional,living_norecurrence|deceased_or_recurrence,disease free survival censoring variable
 days_to_recurrence_or_death,integer,non-unique,optional,decimal,time to recurrence or death
+disease_specific_mortality,character,non-unique,optional,[yn],CRC specific mortality
 batch,character,non-unique,optional,*,batch variable
-drug_name,character,non-unique,optional,*,name of the drug the samples are treated with
-drug_treatment,character,non-unique,optional,[yn],drug treated: y ; non-treated: n
+drug_name,character,non-unique,optional,*,name of the drug the patient was treated with after the tumor sample was taken
+drug_treatment,character,non-unique,optional,[yn],Was patient treated with any drugs after the tumor sample was taken? Treated= y; not treated=n
 drug_response,character,non-unique,optional,[yn],responder: y ; non-responder: n
-uncurated_author_metadata,character,non-unique,optional,*,original uncurated data
+preop_drug_treatment,character,non-unique,optional,[yn],Was patient treated with any drugs before the tumor sample was taken? Treated=y ; not treated=n 
+preop_drug_name,character,non-unique,optional,*,Name of the drug the patient was treated with before the tumor sample was taken
 fu,character,non-unique,optional,[yn],fluorouracil treated: yes or no
 bevacizumab,character,non-unique,optional,[yn],bevacizumab treated; yes or no
 irinotecan,character,non-unique,optional,[yn], irinotecan treated: yes or no
+cetuximab,character,non-unique,optional,[yn],cetuximab treated: yes or no
 capecitabine,character,non-unique,optional,[yn], capecitabine treated: yes or no
-cpt11,character,non-unique,optional,[yn],CPT11 treated: yes or no
 dexamethasone,character,non-unique,optional,[yn], dexamethasone treated: yes or no
-erbitux,character,non-unique,optional,[yn],erbitux treated sample
 gcsf,character,non-unique,optional,[yn],Filgrastim treated
 fudr,character,non-unique,optional,[yn],Floxuridine treated
 folfiri,character,non-unique,optional,[yn],Folfiri treated
@@ -56,7 +55,7 @@ platin,character,non-unique,optional,[yn],platin treated
 panitumumab,character,non-unique,optional,[yn],panitumumab treated
 pegfilgrastim,character,non-unique,optional,[yn],pegfilgrastim treated
 raltitrexed,character,non-unique,optional,[yn],raltitrexed treated
-xeloda,character,non-unique,optional,[yn],xeloda treated
 ancillary,character,non-unique,optional,[yn],therapy type ancillary?
 chemotherapy,character,non-unique,optional,[yn],therapy type chemotherapy?
 moltherapy,character,non-unique,optional,[yn],therapy type Targetted Molecular Thearpy?
+uncurated_author_metadata,character,non-unique,optional,*,original uncurated data

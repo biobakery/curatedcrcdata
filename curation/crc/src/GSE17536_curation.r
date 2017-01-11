@@ -1,3 +1,4 @@
+
 rm(list=ls())
 
 source("../../functions.R")
@@ -21,6 +22,15 @@ curated <- initialCuratedDF(rownames(uncurated),template.filename="template_crc.
 #alt_sample_name
 curated$alt_sample_name <- uncurated$title
 
+##primarysite
+curated$primarysite <- "co"
+
+##sample_type
+curated$sample_type <- "tumor"
+
+##preop_drug_treatment
+curated$preop_drug_treatment <- "n"
+
 #age
 tmp <- uncurated$characteristics_ch1
 tmp <- sub("age: ","",tmp,fixed=TRUE)
@@ -43,6 +53,40 @@ curated$ethnicity <- tmp
 tmp <- uncurated$characteristics_ch1.3
 tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
 curated$stageall <- tmp
+
+#N
+tmp[tmp=="1"] <- "0"
+tmp[tmp=="2"] <- "0"
+tmp[tmp=="3"] <- NA
+tmp[tmp=="4"] <- NA
+curated$N <- tmp
+
+#M
+tmp <- uncurated$characteristics_ch1.3
+tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
+tmp[tmp=="1"] <- "0"
+tmp[tmp=="2"] <- "0"
+tmp[tmp=="3"] <- "0"
+tmp[tmp=="4"] <- "1"
+curated$M <- tmp
+
+#Dstage
+tmp <- uncurated$characteristics_ch1.3
+tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
+tmp[tmp=="1"] <- NA
+tmp[tmp=="2"] <- "B"
+tmp[tmp=="3"] <- "C"
+tmp[tmp=="4"] <- "D"
+curated$Dstage <- tmp
+
+#summarystage
+tmp <- uncurated$characteristics_ch1.3
+tmp <- sub("ajcc_stage: ","",tmp,fixed=TRUE)
+tmp[tmp=="1"] <- "early"
+tmp[tmp=="2"] <- NA
+tmp[tmp=="3"] <- "late"
+tmp[tmp=="4"] <- "late"
+curated$summarystage <- tmp
 
 #G
 tmp <- uncurated$characteristics_ch1.4
@@ -78,11 +122,23 @@ tmp <- as.numeric(tmp)
 tmp <- tmp * 30  #months to days
 curated$days_to_death <- tmp
 
+##disease_specific_mortality
+tmp <- uncurated$characteristics_ch1.6
+tmp <- sub("dss_event (disease specific survival; death from cancer): ","",tmp,fixed=TRUE)
+tmp[tmp=="no death"] <- "n"
+tmp[tmp=="death"] <- "y"
+curated$disease_specific_mortality <- tmp
+
+##days_to_tumor_recurrence
+tmp <- uncurated$characteristics_ch1.10
+tmp <- sub("dfs_time: ","",tmp,fixed=TRUE)
+tmp <- as.numeric(tmp)
+tmp <- tmp * 30  #months to days
+curated$days_to_tumor_recurrence <- tmp
 
 curated <- postProcess(curated, uncurated)
+curated<-updatedfs(curated)
+
 write.table(curated, row.names=FALSE, file="../curated/GSE17536_curated_pdata.txt",sep="\t")
 
 
-##Questions:
-##Overall survival == days_to_death?
-##is there is diff between overall survival, dfs_time, dss_time?

@@ -24,7 +24,7 @@ n]
    platform_shorttitle:     
       Affymetrix HuEx-1_0-st
    platform_summary:     
-      huex-1_0-st
+      huex.1.0.st.v2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -39,21 +39,21 @@ n]
 Preprocessing: default
 featureData(eset):
 An object of class 'AnnotatedDataFrame'
-  featureNames: ABCF1 ANAPC5 ... ZNF259P1///ZNF259 (282 total)
+  featureNames: A1CF A2ML1 ... ZYX (10015 total)
   varLabels: probeset gene
   varMetadata: labelDescription
 
 }}
 \details{
 \preformatted{
-assayData: 282 features, 36 samples
-Platform type: huex-1_0-st
+assayData: 10015 features, 36 samples
+Platform type: huex.1.0.st.v2
 Overall survival time-to-event summary (in years):
 Call: survfit(formula = Surv(time, cens) ~ -1)
 
    4 observations deleted due to missingness 
 records   n.max n.start  events  median 0.95LCL 0.95UCL 
- 32.000  32.000  32.000  22.000   1.397   0.822      NA 
+  32.00   32.00   32.00   10.00    6.16    5.26      NA 
 
 --------------------------- 
 Available sample meta-data: 
@@ -63,13 +63,21 @@ alt_sample_name:
    Length     Class      Mode 
        36 character character 
 
+sample_type: 
+tumor 
+   36 
+
 summarystage: 
 early  late  NA's 
-    6    27     3 
+    1    27     8 
 
-T: 
-   1    2    3    4 NA's 
-   1    5    8   19    3 
+M: 
+   0    1 NA's 
+  14   19    3 
+
+Dstage: 
+   B    C    D NA's 
+   5    8   19    4 
 
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -81,23 +89,43 @@ days_to_death:
 
 vital_status: 
 deceased   living     NA's 
-      22       10        4 
+      10       22        4 
+
+family_history: 
+ n 
+36 
+
+msi: 
+MSS 
+ 36 
 
 gender: 
  f  m 
 20 16 
 
 kras: 
- n  y 
-16 20 
+mutant     wt 
+    20     16 
+
+tumor_size: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  2.500   4.000   4.000   4.906   5.000  14.000       4 
 
 mutation_apc: 
  n  y 
-19 17 
+ 8 28 
+
+stageall: 
+   1    2    3    4 NA's 
+   1    5    8   19    3 
 
 batch: 
    Length     Class      Mode 
        36 character character 
+
+preop_drug_treatment: 
+ n 
+36 
 
 uncurated_author_metadata: 
    Length     Class      Mode 

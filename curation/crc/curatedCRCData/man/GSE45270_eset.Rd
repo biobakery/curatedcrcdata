@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133Plus2
    platform_summary:     
-      hg-u133_plus_2
+      hgu133plus2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -46,7 +46,7 @@ An object of class 'AnnotatedDataFrame'
 \details{
 \preformatted{
 assayData: 19320 features, 13 samples
-Platform type: hg-u133_plus_2
+Platform type: hgu133plus2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 

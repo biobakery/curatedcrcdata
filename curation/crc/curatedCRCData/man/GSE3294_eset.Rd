@@ -55,9 +55,25 @@ alt_sample_name:
    Length     Class      Mode 
        24 character character 
 
+sample_type: 
+tumor 
+   24 
+
+primarysite: 
+co re 
+17  7 
+
+summarygrade: 
+high  low 
+   3   21 
+
+G: 
+ 1  2  3 
+10 11  3 
+
 summarystage: 
-early  late 
-    4    20 
+early 
+   24 
 
 T: 
  1  2  3 
@@ -71,17 +87,25 @@ M:
  0 
 24 
 
+Dstage: 
+ B  C 
+ 6 18 
+
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   35.00   67.25   76.50   71.46   78.75   89.00 
+
+summarylocation: 
+ l  r 
+12 12 
 
 gender: 
  f  m 
  8 16 
 
 stageall: 
- 2  3 
- 6 18 
+ 1  2  3 
+ 3  5 16 
 
 uncurated_author_metadata: 
    Length     Class      Mode 

@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HT HG-U133+ PM
    platform_summary:     
-      ht_hg-u133_plus_pm
+      hthgu133pluspm
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -46,7 +46,7 @@ An object of class 'AnnotatedDataFrame'
 \details{
 \preformatted{
 assayData: 20741 features, 22 samples
-Platform type: ht_hg-u133_plus_pm
+Platform type: hthgu133pluspm
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
@@ -60,12 +60,8 @@ tumor
    22 
 
 msi: 
- n  y 
-14  8 
-
-mss: 
- n  y 
- 8 14 
+MSI MSS 
+  8  14 
 
 batch: 
 2009-10-07 

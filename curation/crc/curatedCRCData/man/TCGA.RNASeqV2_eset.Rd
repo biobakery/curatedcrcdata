@@ -74,9 +74,33 @@ primarysite:
  co 
 195 
 
+summarystage: 
+early  late  NA's 
+   91   103     1 
+
+T: 
+   Length     Class      Mode 
+      195 character character 
+
+N: 
+  0   1   2   X 
+116  51  27   1 
+
+M: 
+   0    1    X NA's 
+ 128   29   35    3 
+
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   31.00   55.00   66.00   64.95   77.00   90.00 
+
+days_to_tumor_recurrence: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    0.0   306.2   458.5   539.7   601.5  2564.0     169 
+
+recurrence_status: 
+norecurrence   recurrence         NA's 
+         111           25           59 
 
 days_to_death: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
@@ -87,28 +111,48 @@ deceased   living     NA's
       18      119       58 
 
 msi: 
-   n    y NA's 
-  32    9  154 
+ MSI  MSS NA's 
+   9   32  154 
 
 location: 
    Length     Class      Mode 
       195 character character 
+
+summarylocation: 
+   l    r NA's 
+  65  127    3 
 
 gender: 
   f   m 
  87 108 
 
 kras: 
-   n    y NA's 
-   9    4  182 
+mutant     wt   NA's 
+     4      9    182 
 
-mss: 
-   n    y NA's 
-   9   32  154 
+lymphnodesremoved: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.00   13.25   19.00   23.09   27.00  109.00      21 
 
-uncurated_author_metadata: 
-   Length     Class      Mode 
-      195 character character 
+lymphnodesinvaded: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  0.000   0.000   0.000   1.983   2.000  50.000      22 
+
+stageall: 
+   1    2    3    4 NA's 
+  33   73   52   30    7 
+
+ethnicity: 
+    black caucasian     other      NA's 
+       16       152        12        15 
+
+drug_treatment: 
+   n    y NA's 
+  21   14  160 
+
+preop_drug_treatment: 
+  n 
+195 
 
 fu: 
    n NA's 
@@ -122,19 +166,15 @@ irinotecan:
    n NA's 
   60  135 
 
-capecitabine: 
-   n    y NA's 
-  59    1  135 
+cetuximab: 
+   n NA's 
+  60  135 
 
-cpt11: 
-   n    y NA's 
-  59    1  135 
+capecitabine: 
+   n NA's 
+  60  135 
 
 dexamethasone: 
-   n    y NA's 
-  59    1  135 
-
-erbitux: 
    n NA's 
   60  135 
 
@@ -163,8 +203,8 @@ mitomycin:
   60  135 
 
 platin: 
-   n NA's 
-  60  135 
+   n    y NA's 
+  58    2  135 
 
 panitumumab: 
    n NA's 
@@ -172,15 +212,11 @@ panitumumab:
 
 pegfilgrastim: 
    n    y NA's 
-  57    3  135 
+  59    1  135 
 
 raltitrexed: 
    n    y NA's 
   59    1  135 
-
-xeloda: 
-   n NA's 
-  60  135 
 
 ancillary: 
    n    y NA's 
@@ -193,6 +229,10 @@ chemotherapy:
 moltherapy: 
    n    y NA's 
   57    3  135 
+
+uncurated_author_metadata: 
+   Length     Class      Mode 
+      195 character character 
 
 }}
 \keyword{datasets}

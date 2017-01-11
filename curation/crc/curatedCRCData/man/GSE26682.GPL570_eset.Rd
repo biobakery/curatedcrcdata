@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133Plus2
    platform_summary:     
-      hg-u133_plus_2
+      hgu133plus2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -45,39 +45,39 @@ An object of class 'AnnotatedDataFrame'
 }}
 \details{
 \preformatted{
-assayData: 11838 features, 176 samples
-Platform type: hg-u133_plus_2
+assayData: 11838 features, 156 samples
+Platform type: hgu133plus2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
 
 alt_sample_name: 
    Length     Class      Mode 
-      176 character character 
+      156 character character 
+
+sample_type: 
+tumor 
+  156 
 
 age_at_initial_pathologic_diagnosis: 
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  45.00   66.00   73.00   71.75   78.00   92.00 
+  45.00   65.75   73.00   71.50   78.00   92.00 
 
 msi: 
-   n    y NA's 
- 119   41   16 
+ MSI  MSS NA's 
+  15  128   13 
 
 gender: 
  f  m 
-83 93 
-
-mss: 
-   n    y NA's 
-  41  119   16 
+75 81 
 
 batch: 
    Length     Class      Mode 
-      176 character character 
+      156 character character 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
-      176 character character 
+      156 character character 
 
 }}
 \keyword{datasets}

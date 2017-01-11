@@ -40,8 +40,8 @@ medianSurvival <- function(eset){
     return(output)
 }
 getEsetData <- function(eset, 
-    possible.stages = c("early", "late"),
-    possible.histological_types = c("ser", "clearcell", "endo", "mucinous", "other", "unknown")
+    possible.msi = c("MSI", "MSS"),
+    possible.G = c(1,2,3,4)
 ){
     makeSummary <- function(field, possible.values){
         my.table <- sapply(possible.values, function(x) sum(eset[[field]] == x, na.rm=TRUE))
@@ -53,18 +53,18 @@ getEsetData <- function(eset,
     output <- c(experimentData(eset)@lab,  #name/year
                 experimentData(eset)@pubMedIds,
                 ncol(eset),  # number of samples
-                makeSummary("summarystage", possible.stages),
-                makeSummary("histological_type", possible.histological_types),
-                sum(eset$histological_type == possible.histological_types[1] &
-                eset$summarystage == possible.stages[2], na.rm=TRUE), ##number of serous samples
+                makeSummary("msi status", possible.msi),
+                makeSummary("G", possible.G),
+                #sum(eset$G == possible.G[1] &
+                #eset$msi == possible.msi[2], na.rm=TRUE), ##number of serous samples
                 ifelse(length(experimentData(eset)@other$platform_shorttitle), experimentData(eset)@other$platform_shorttitle,""),  #platform
                 survdata)
     names(output) <- c("Study",
                        "PMID",
                        "N samples",
-                       "stage",
-                       "histology",
-                       "known late-stage serous",
+                       "msi status",
+                       "G",
+                 #      "known late-stage serous",
                        "Platform",
                        names(survdata))
     return(output)

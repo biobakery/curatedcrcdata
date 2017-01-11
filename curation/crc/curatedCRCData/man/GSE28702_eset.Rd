@@ -23,7 +23,7 @@ Experiment data
    platform_shorttitle:     
       Affymetrix HG-U133Plus2
    platform_summary:     
-      hg-u133_plus_2
+      hgu133plus2
    platform_manufacturer:     
       Affymetrix
    platform_distribution:     
@@ -45,39 +45,83 @@ An object of class 'AnnotatedDataFrame'
 }}
 \details{
 \preformatted{
-assayData: 19320 features, 59 samples
-Platform type: hg-u133_plus_2
+assayData: 19320 features, 83 samples
+Platform type: hgu133plus2
 --------------------------- 
 Available sample meta-data: 
 --------------------------- 
 
 alt_sample_name: 
    Length     Class      Mode 
-       59 character character 
+       83 character character 
 
 sample_type: 
 metastatic      tumor 
-         3         56 
+        27         56 
+
+primarysite: 
+  co   re NA's 
+  33   23   27 
+
+summarygrade: 
+high  low 
+   5   78 
+
+G: 
+ 1  2  3 
+62 16  5 
+
+age_at_initial_pathologic_diagnosis: 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  31.00   55.00   65.00   62.96   71.00   84.00 
+
+location: 
+   Length     Class      Mode 
+       83 character character 
+
+summarylocation: 
+   l    r NA's 
+  41   15   27 
 
 gender: 
  f  m 
-20 39 
-
-batch: 
-   Length     Class      Mode 
-       59 character character 
+29 54 
 
 drug_name: 
 mfolfox6 
-      59 
+      83 
+
+drug_treatment: 
+ y 
+83 
 
 drug_response: 
  n  y 
-25 34 
+41 42 
+
+preop_drug_treatment: 
+ n 
+83 
+
+folfox: 
+ y 
+83 
+
+leucovorin: 
+ y 
+83 
+
+platin: 
+ y 
+83 
+
+chemotherapy: 
+ y 
+83 
 
 uncurated_author_metadata: 
    Length     Class      Mode 
-       59 character character 
+       83 character character 
 
 }}
 \keyword{datasets}
